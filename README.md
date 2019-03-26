@@ -1,0 +1,1 @@
+This is a Proof of Concept for a client. It is a simple React Native Mobile App for Pin Card Generation.
