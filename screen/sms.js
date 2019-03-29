@@ -11,7 +11,7 @@ import SmsListener from 'react-native-android-sms-listener'
 
 var filter = {
     box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
-    address: 'AirtelERC', // sender's phone number
+    address: '***********', // sender's phone number
     // the next 2 filters can be used for pagination
     indexFrom: -1, // start from index 0
     maxCount: 2, // count of SMS to return each time
@@ -46,13 +46,14 @@ export default class App extends Component{
       password: '',
       quantity: '',
       disable: true
-    };
+    }
+
 
       sendSMSNow = (sent, num, count)=>{
         if(sent === false ){
           let hold = this.state
-          let message= `xx ${hold.phoneNumber} xx 1 ${hold.password}`
-          let senderId = 'xx'
+          let message= `****************************`
+          let senderId = '*********'
           // let count =1 
           if( count <= num ){
             openProgress() 
@@ -78,8 +79,14 @@ export default class App extends Component{
           sendSMSNow( true, num, count)
           // setTimeout(()=>{
               let subscription = SmsListener.addListener(message => {
-              let verificationCodeRegex = /Msg:ERC/
+              let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
+              let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
 
+                if (transactionIdRegex.test(message.body)) {
+                    sendSMSNow(true, num, count) 
+                    // delete the message
+                    
+                }
                 if (verificationCodeRegex.test(message.body)) {
                     // alert(verificationCodeRegex)
                     subscription.remove();
@@ -87,7 +94,7 @@ export default class App extends Component{
                     sendSMSNow(false, num, count) 
                 }
                 else{
-                  alert("Network Error:  " + message.body)
+                  alert("Error:  " + message.body)
                   sendSMSNow(true, num, count)
 
                 }
@@ -123,30 +130,6 @@ export default class App extends Component{
 
   }
 
-  
-
-
- _onProcessTextChange = (currentText, min, max) =>{
-        if(!currentText){
-          this.setState({
-            errorText: "Field can't be empty"
-          })
-        }  else if(currentText.length < min && currentText.length > max  ){
-          this.setState({
-            errorText: 'Min length is `${min}` and Max is `${max}`'
-          })
-        }
-        else{
-          this.setState({
-            errorText: '',
-            disable: false
-          })
-        }
-  }
-
-
-
-
 getSMS = ()=> {
      SmsAndroid.list(JSON.stringify(filter), (fail) => {
         alert("Failed with this error: " + fail)
@@ -166,48 +149,98 @@ getSMS = ()=> {
 
 
 
+validateForm = () =>{
+  if(this.state.phoneNumber && this.state.password && this.state.amount && this.state.quantity ){
+    this.setState({ disable: false})
+  }else{
+    this.setState({ disable: true})
+  }
+}
+
+_handlePhoneNumber =phoneNumber=>{
+  if (+phoneNumber>=0 && phoneNumber.length <= 15 ){
+    this.setState({
+      phoneNumber,
+      errorText : ""
+      }, this.validateForm)
+  }else{
+    this.setState({
+      errorText : "Phone Number can't be empty or more than 15 digits"
+    })
+  }
+}
+
+
+_handlePassword =password=>{
+  if (+password>=0 && password.length <= 8){
+    this.setState({
+      password,
+      errorText : ""
+    }, this.validateForm)
+  }else{
+    this.setState({
+      errorText : "Password can't be empty or more than 8 digits"
+    })
+  }
+}
+
+_handleAmount =amount=>{
+  if (+amount>=0  && amount.length <= 5 ){
+    this.setState({
+      amount,
+      errorText : ""
+    }, this.validateForm)
+  }else{
+  this.setState({
+      errorText : "Amount can't be empty or more than 5 digits"
+    })
+  }
+}
+
+
+_handleQuantity =quantity=>{
+  if (+quantity >=0  && quantity.length<= 10){
+    this.setState({
+      quantity,
+      errorText : ""
+      }, this.validateForm)
+  }else{
+    this.setState({
+      errorText : "Quantity can't be empty or more than 10 digits"
+    })
+  }
+}
+
     render(){
         return(
           <View style= {{ flex: 1, flexDirection: 'column',paddingTop: 30, padding:10}}>
            <KeyboardAvoidingView  behavior="padding" enabled>
         <View style={{}}>
           <ScrollView  >
-          <Text style={{color: 'blue'}} > {this.state.errorText} </Text>
+          <Text style={{color: 'red'}} > {this.state.errorText} </Text>
           <Text style={{fontWeight: 'bold'}}> Phone Number </Text>
             <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
               keyboardType={'numeric'}
-              onChangeText={(phoneNumber) => {
-                    this._onProcessTextChange(phoneNumber, 9, 15)
-                    this.setState({phoneNumber})
-                  }}
+              onChangeText={this._handlePhoneNumber}
               value={this.state.phoneNumber}
             />
             <Text style={{fontWeight: 'bold'}}> Amount </Text>
             <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
               keyboardType={'numeric'}
-              onChangeText={(amount) => {
-                    this._onProcessTextChange(amount, 2, 4);
-                    this.setState({amount})
-                  }}
+              onChangeText={this._handleAmount}
               value={this.state.amount}
             />
 
             <Text style={{fontWeight: 'bold'}}> Password </Text>
              <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
               keyboardType={'numeric'}
-              onChangeText={(password) => {
-                    this._onProcessTextChange(password,1, 6);
-                    this.setState({password})
-                  }}
+              onChangeText={this._handlePassword}
               value={this.state.password}
             />
             <Text style={{fontWeight: 'bold',}}> Quantity </Text>
             <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
               keyboardType={'numeric'}
-              onChangeText={(quantity) => {
-                    this._onProcessTextChange(quantity, 1, 3);
-                    this.setState({quantity})
-                  }}
+              onChangeText={this._handleQuantity}
               value={this.state.quantity}
             />
 
