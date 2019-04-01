@@ -8,7 +8,7 @@ import About from '../screen/about';
 import Contact from '../screen/contact';
 import DrawerScreen from '../screen/DrawerScreen';
 // import Request from '../screen/request';
-// import Licence from '../screen/licence';
+import Licence from '../screen/licence';
 // import Settings from '../screen/settings';
 
 const Tabs = createMaterialTopTabNavigator({
@@ -65,18 +65,18 @@ class NavigationDrawerStructure extends Component {
 // });
 
 
-// const licenceStackNavigator = createStackNavigator({
-//   Licence: {
-//     screen: Licence,
-//     navigationOptions: ({ navigation }) => ({
-//       title: 'Licence',
-//       headerStyle: {
-//         backgroundColor: '#ccc',
-//       },
-//       headerTintColor: '#000',
-//     }),
-//   },
-// });
+const licenceStackNavigator = createStackNavigator({
+  Licence: {
+    screen: Licence,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Licence',
+      headerStyle: {
+        backgroundColor: '#ccc',
+      },
+      headerTintColor: '#000',
+    }),
+  },
+});
 
 // const settingsStackNavigator = createStackNavigator({
 //   Settings: {
@@ -95,6 +95,9 @@ class NavigationDrawerStructure extends Component {
 const DrawerNavigator = createDrawerNavigator({
     Home:{
         screen: Tabs
+    },
+    Licence: {
+        screen: licenceStackNavigator
     }
 },{
     initialRouteName: 'Home',
@@ -102,13 +105,6 @@ const DrawerNavigator = createDrawerNavigator({
     drawerWidth: 300
 });
 
-// const MenuImage = () => {
-//     if(!navigation.state.isDrawerOpen){
-//         return <Image source={require('../images/menu-button.png')}/>
-//     }else{
-//         return <Image source={require('../images/left-arrow.png')}/>
-//     }
-// }
 
 
 const StackNavigator = createStackNavigator({

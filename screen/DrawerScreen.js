@@ -5,7 +5,11 @@ import {ScrollView, Text, View} from 'react-native';
 import { DrawerActions } from 'react-navigation';
 import styles from '../styles/styles';
 
-class DrawerScreen extends Component {
+import {connect} from 'react-redux'
+
+import {licence} from '../redux/action'
+
+export class DrawerScreen extends Component {
   navigateToScreen = (route) => () => {
     const navigateAction = NavigationActions.navigate({
       routeName: route
@@ -19,6 +23,11 @@ class DrawerScreen extends Component {
       <View>
         <ScrollView>
           <View>
+          <View style={styles.menuItem}>
+              <Text style={{ fontWeight : 'bold'}}>
+                Welcome {this.props.phoneNumber}
+              </Text>
+          </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('Home')}>
                 Home
@@ -34,6 +43,11 @@ class DrawerScreen extends Component {
               Contact
               </Text>
             </View>
+            <View style={styles.menuItem}>
+              <Text onPress={this.navigateToScreen('Licence')}>
+              Licence
+              </Text>
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -42,5 +56,8 @@ class DrawerScreen extends Component {
 }
 
 
+const mapStateToProps = state => ({
+  phoneNumber: state.licence.phoneNumber,
+})
 
-export default DrawerScreen;
+export default connect(mapStateToProps, {licence})(DrawerScreen)

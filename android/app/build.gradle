@@ -135,6 +135,10 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-sim-data')
+    implementation project(':react-native-keep-awake')
+    implementation project(':react-native-device-info')
+    implementation project(':react-native-imei')
     compile project(':react-native-android-sms-listener')
     compile project(':react-native-gesture-handler')
     compile project(':react-native-get-sms-android')

@@ -5,57 +5,84 @@ import { Platform, StyleSheet, Text, View,   ScrollView,
   TextInput,
   KeyboardAvoidingView,
   Button,
-  Image,ImageBackground,
+  Image,
   StatusBar, } from 'react-native';
 
-import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
-import { createBottomTabNavigator, createAppContainer, TabBarBottom } from 'react-navigation'; 
-
-import {createStackNavigator, createDrawerNavigator, createMaterialTopTabNavigator} from 'react-navigation';
-import { DrawerActions } from 'react-navigation';
-
 import {NavigationActions} from 'react-navigation';
+import {connect} from 'react-redux'
 
- import Icon from 'react-native-vector-icons/Ionicons';
-
- import {licence, licenceKey} from '../route/licenceKey'
-  
+import {licence} from '../redux/action'
 
 
-export default class LicenceScreen extends React.Component {
+
+export class LicenceScreen extends React.Component {
 	constructor(props) {
     super(props);
     this.state = {
       username: '',
       serial: '',
-      imei: '',
-      phoneSerial: '',
       disable: true,
-      
+      activationMessage: ''
     };
 
   }
 
 
+componentWillReceiveProps(nextProps) {
+    if (nextProps.token) {
+      this.setState({
+        disable: false,
+        serial: '',
+        username: ''
+      })
+    }else{
+      this.setState({
+        activationMessage: 'Your Device has not been activated'
+      })
+    }
+}
 
-_onProcessTextChange = (currentText) =>{
-	alert(licenceKey)
-        if(!currentText){
-          this.setState({
-            errorText: "Field can't be empty"
-          })
-        }  else if(currentText.length > 15 && currentText || !currentText){
-          this.setState({
-            errorText: 'Maximum length is 15'
-          })
-        }
-        else{
-          this.setState({
-            errorText: '',
-            disable: false
-          })
-        }
+ _activate = async () => {
+    this.props.licence(this.state.username, this.state.serial)
   }
+
+
+validateForm = () =>{
+  if(this.state.username && this.state.serial && !this.props.token){
+    this.setState({ disable: false})
+  }else{
+    this.setState({ disable: true})
+  }
+}
+
+_handleUsername =username=>{
+  if (username.length>=0 && username.length <= 30 ){
+    this.setState({
+      username,
+      errorText : ""
+      }, this.validateForm)
+  }else{
+    this.setState({
+      errorText : "Username can't be empty or loneger than 30 letters"
+    })
+  }
+}
+
+
+_handleSerial =serial=>{
+  if (serial.length>=0 && serial.length <= 30){
+    this.setState({
+      serial,
+      errorText : ""
+    }, this.validateForm)
+  }else{
+    this.setState({
+      errorText : "Serial field can't be empty or longer than 30 letters"
+    })
+  }
+}
+
+
 
 
   render() {
@@ -65,28 +92,23 @@ _onProcessTextChange = (currentText) =>{
         <View style={{}}>
           <ScrollView  >
           <Text style={{ paddingBottom: 8}} >Activation of device require an Internet access. Please ensure your device is connected to the internet to be able to activate your device.</Text>
-          <Text style={{color: 'blue'}} > {this.state.errorText} </Text>
+          <Text style={{color: 'blue'}} > {this.props.activationMessage} </Text>
+          <Text style={{color: 'red'}}>{this.state.errorText}</Text>
           <Text style={{fontWeight: 'bold'}}> Username </Text>
             <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
-              onChangeText={(username) => {
-                    this._onProcessTextChange(username);
-                    this.setState({username})
-                  }}
+              onChangeText={this._handleUsername}
               value={this.state.username}
               autoCapitalize='none'
             />
             <Text style={{fontWeight: 'bold'}}> Serial Number </Text>
             <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
-              onChangeText={(serial) => {
-                    this._onProcessTextChange(serial);
-                    this.setState({serial})
-                  }}
+              onChangeText={this._handleSerial}
               value={this.state.serial}
               autoCapitalize='none'
             />
             <View style={{paddingTop: 10}}>
             <Button
-              onPress={licence(this.state)}
+              onPress={this._activate}
               title="Activate Device"
               color="#841584"
               accessibilityLabel="Activate Device"
@@ -106,3 +128,11 @@ _onProcessTextChange = (currentText) =>{
     );
   }
 }
+
+
+const mapStateToProps = state => ({
+  token: state.licence.token,
+  activationMessage : state.licence.activationMessage
+})
+
+export default connect(mapStateToProps, {licence})(LicenceScreen)

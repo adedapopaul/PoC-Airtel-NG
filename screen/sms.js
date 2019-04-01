@@ -1,43 +1,28 @@
 import React,{Component} from 'react';
 // import Navigator from './route/route';
 import SmsAndroid  from 'react-native-get-sms-android';
-import { Platform, StyleSheet, Text, View,   ScrollView,
-        TouchableOpacity,TextInput,KeyboardAvoidingView,Button,Image,ImageBackground,
-       StatusBar,DeviceEventEmitter} from 'react-native';
+import { Platform, StyleSheet, Text, View,ScrollView,
+        TouchableOpacity,TextInput,KeyboardAvoidingView,Button,Image} from 'react-native';
        
-import { ProgressDialog } from 'react-native-simple-dialogs';
+import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
 import SmsListener from 'react-native-android-sms-listener'
+import KeepAwake from 'react-native-keep-awake';
+import {connect} from 'react-redux'
 
+import {licence} from '../redux/action'
+import RNSimData from 'react-native-sim-data'
+
+// const phoneNumber = RNSimData.getSimInfo().deviceId0
 
 var filter = {
     box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
-    address: '***********', // sender's phone number
-    // the next 2 filters can be used for pagination
+    address: '*********', // sender's phone number
     indexFrom: -1, // start from index 0
     maxCount: 2, // count of SMS to return each time
 };
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-export default class App extends Component{
+export class SimClass extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -45,113 +30,131 @@ export default class App extends Component{
       amount: '',
       password: '',
       quantity: '',
-      disable: true
+      disable: true,
+      activationMessage: '',
+      phoneNumberDetails: ''
     }
 
 
-      sendSMSNow = (sent, num, count)=>{
-        if(sent === false ){
-          let hold = this.state
-          let message= `****************************`
-          let senderId = '*********'
-          // let count =1 
-          if( count <= num ){
-            openProgress() 
-            SmsAndroid.autoSend(senderId, message, (fail) => {
-                alert("Failed with this error: " + fail)
-            }, (success)=> console.log(success))
-            // count++
-            listenSMSNow(true, num, count)
-          }else{
-            alert("Finished")
-          }
-          
-         // return sent = true
-        }
-       
+  sendSMSNow = (sent, num, count)=>{
+    if(sent === false ){
+      let hold = this.state
+      let message= `********************`
+      let senderId = '***********'
+      // let count =1 
+      if( count <= num ){
+        openProgress() 
+        SmsAndroid.autoSend(senderId, message, (fail) => {
+            alert("Failed with this error: " + fail)
+        }, (success)=> console.log(success))
+        // count++
+        listenSMSNow(true, num, count)
+        KeepAwake.activate();
+      }else{
+        alert("Finished")
+        KeepAwake.deactivate();
       }
-
-      listenSMSNow= ( sent, num, count) =>{
-        // alert("welcome")
-        if(sent === true){
-          // alert( 'welcome 2')
-          // let count = count
-          sendSMSNow( true, num, count)
-          // setTimeout(()=>{
-              let subscription = SmsListener.addListener(message => {
-              let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
-              let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
-
-                if (transactionIdRegex.test(message.body)) {
-                    sendSMSNow(true, num, count) 
-                    // delete the message
-                    
-                }
-                if (verificationCodeRegex.test(message.body)) {
-                    // alert(verificationCodeRegex)
-                    subscription.remove();
-                    count++
-                    sendSMSNow(false, num, count) 
-                }
-                else{
-                  alert("Error:  " + message.body)
-                  sendSMSNow(true, num, count)
-
-                }
-              }) 
-          // }, 5*60*1000)
-        }
-        
-      }
-     openProgress = () => {
-            this.setState({ showProgress: true });
-
-            setTimeout(
-                () => {
-                    this.setState({ showProgress: false });
-                },
-                4000,
-            );
-        }
-
-      listenSms= ()=> {
-        var  sent = false
-        let smsEntered = false
-        clearSending = false
-        const num = +this.state.quantity
-        var count = 1
-         
-        sendSMSNow(sent, num, count)      
-            
-      }
-             
-          
-             
-
+    }
   }
 
+  listenSMSNow= ( sent, num, count) =>{
+    if(sent === true){
+      sendSMSNow( true, num, count)
+          let subscription = SmsListener.addListener(message => {
+            let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
+            let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
+
+              if (transactionIdRegex.test(message.body)) {
+                  sendSMSNow(true, num, count) 
+              }
+              else if (verificationCodeRegex.test(message.body)) {
+                  subscription.remove();
+                  count++
+                  sendSMSNow(false, num, count) 
+              }
+              else{
+                alert("Error:  " +'\nPlease Restart Process.' +'\nMessage Body: '+ message.body)
+                sendSMSNow(true, num, count)
+                KeepAwake.deactivate();
+              }
+          }) 
+    }
+        
+  }
+  openProgress = () => {
+    this.setState({ showProgress: true });
+
+    setTimeout(() => {
+        this.setState({ showProgress: false });
+    },4000)
+  }
+
+  listenSms= ()=> {
+    var  sent = false
+    let smsEntered = false
+    clearSending = false
+    const num = +this.state.quantity
+    var count = 1 
+    sendSMSNow(sent, num, count)      
+        
+  }
+             
+          
+             
+
+}
+
+
+componentDidMount(){
+  this.getPhoneDetails()
+}
+
+getPhoneDetails = ()=> {
+  const phoneNumberDetails = RNSimData.getSimInfo().simSerialNumber0
+    this.setState({phoneNumberDetails : phoneNumberDetails})
+}
+
 getSMS = ()=> {
-     SmsAndroid.list(JSON.stringify(filter), (fail) => {
-        alert("Failed with this error: " + fail)
-    },
-    (count, smsList) => {
-        // alert('Count: ', count);
-        // alert('List: ', smsList);
-        var arr = JSON.parse(smsList);
- 
-        arr.forEach(function(object){
-            // alert( object);
-            alert(object.body);
-            // console.log("-->" + object.body);
-        })
-    })
+  SmsAndroid.list(JSON.stringify(filter), (fail) => {
+      alert("Failed with this error: " + fail)
+  },
+  (count, smsList) => {
+      // alert('Count: ', count);
+      // alert('List: ', smsList);
+      var arr = JSON.parse(smsList);
+
+      arr.forEach(function(object){
+          // alert( object);
+          alert(object.body);
+          // console.log("-->" + object.body);
+      })
+  })
 }
 
 
 
 validateForm = () =>{
   if(this.state.phoneNumber && this.state.password && this.state.amount && this.state.quantity ){
-    this.setState({ disable: false})
+    // alert(this.props.persistedPhoneNumber)
+      if(this.props.persistedPhoneNumber && this.props.token){
+        if( this.state.phoneNumberDetails === this.props.persistedPhoneNumber){
+          // alert(this.props.persistedPhoneNumber +'\nPlease Restart Process.' +'\n'+ this.props.persistedPhoneNumber)
+          this.setState({ disable: false})
+        }else{
+          this.setState({ 
+            dialogVisible: true,
+            disable: true,
+            activationMessage: 'Please use the registered SIM Card with Device'
+          })
+        }
+      }
+      else{
+        this.setState({
+         disable: true,
+         activationMessage: 'Your Device has not been activated'
+       })
+      }
+    
   }else{
     this.setState({ disable: true})
   }
@@ -218,6 +221,7 @@ _handleQuantity =quantity=>{
         <View style={{}}>
           <ScrollView  >
           <Text style={{color: 'red'}} > {this.state.errorText} </Text>
+          <Text style={{color: 'blue'}} > {this.state.activationMessage} </Text>
           <Text style={{fontWeight: 'bold'}}> Phone Number </Text>
             <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1, color: "black", padding: 10}}
               keyboardType={'numeric'}
@@ -269,6 +273,30 @@ _handleQuantity =quantity=>{
               visible={ this.state.showProgress }
             />
 
+            <View>
+            <Dialog
+                visible={this.state.dialogVisible}
+                title="Activation Message"
+                onTouchOutside={() => this.setState({dialogVisible: false})} 
+                onRequestClose = {() => this.setState({dialogVisible: false})}>
+              <View>
+                  <View>
+                  <Text style={{ fontSize: 16 }}>
+                  Please use the registered SIM Card with Device 
+                  </Text>
+                  </View>
+                  
+                  <View style={{paddingTop : 10}}> 
+                  <Button
+                  onPress={() => this.setState({dialogVisible: false})}
+                  title="Close"
+                  color="#841584"
+                  accessibilityLabel="Close"
+                  />
+                </View>
+              </View>
+            </Dialog>
+            </View>
             </View>
           </ScrollView>
         </View>
@@ -279,3 +307,9 @@ _handleQuantity =quantity=>{
 }
 
 
+const mapStateToProps = state => ({
+  persistedPhoneNumber: state.licence.phoneNumber,
+  token: state.licence.token,
+})
+
+export default connect(mapStateToProps, {licence})(SimClass)

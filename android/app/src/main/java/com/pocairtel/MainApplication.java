@@ -3,6 +3,10 @@ package com.pocairtel;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import eu.sigrlami.rnsimdata.RNSimDataReactPackage;
+import com.corbt.keepawake.KCKeepAwakePackage;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import codes.simen.IMEI.IMEI;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.centaurwarchief.smslistener.SmsListenerPackage;
 import com.centaurwarchief.smslistener.SmsListenerPackage;
@@ -47,6 +51,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSimDataReactPackage(),
+            new KCKeepAwakePackage(),
+            new RNDeviceInfo(),
+            new IMEI(),
             new SmsListenerPackage(),
             new RNGestureHandlerPackage(),
             new SmsPackage(),
