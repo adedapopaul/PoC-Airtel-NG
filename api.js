@@ -2,7 +2,7 @@ import IMEI from 'react-native-imei'
 import DeviceInfo from 'react-native-device-info';
 
 export const requestLicence = async (username, serial, imei, phoneSerial) => {
-	const response = await fetch('http://192.168.43.92:3000/v1/licence/licence', {
+	const response = await fetch('https://cardgenerationserver.herokuapp.com/v1/licence/licence', {
 	    method: 'PUT',
 	    headers: {'content-type': 'application/json'},
 	    body: JSON.stringify({

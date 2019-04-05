@@ -3,6 +3,9 @@ package com.pocairtel;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.burnweb.rnsendintent.RNSendIntentPackage;
+import com.github.wumke.RNImmediatePhoneCall.RNImmediatePhoneCallPackage;
+import com.centaurwarchief.smslistener.SmsListenerPackage;
 import eu.sigrlami.rnsimdata.RNSimDataReactPackage;
 import com.corbt.keepawake.KCKeepAwakePackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
@@ -51,6 +54,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSendIntentPackage(),
+            new RNImmediatePhoneCallPackage(),
             new RNSimDataReactPackage(),
             new KCKeepAwakePackage(),
             new RNDeviceInfo(),

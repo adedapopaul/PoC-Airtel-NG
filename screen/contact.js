@@ -15,16 +15,15 @@ import { DrawerActions } from 'react-navigation';
 
 import {NavigationActions} from 'react-navigation';
 
+import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
+
 
 export default class ContactScreen extends React.Component {
   render() {
     return (
       <ScrollView>
       <View style={{ flex: 1, flexDirection: 'column',justifyContent: 'center', padding: 15}}>
-      
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>Contact</Text>
-      </View>
+
       <View style={{ flexDirection: 'column', paddingTop:10}}>
         <Text style={{fontWeight: 'bold'}} >Address: </Text>
         <Text>2 Airtel Shop, Oluwaga Bus Stop, Ayobo,Lagos State.</Text>
@@ -44,7 +43,7 @@ export default class ContactScreen extends React.Component {
         <Button
           title="Call Us"
           color="#841584"
-          onPress={() => console.log('Contact') }
+          onPress={() => RNImmediatePhoneCall.immediatePhoneCall('+2348167876460') }
         />
       </View>
       </View>

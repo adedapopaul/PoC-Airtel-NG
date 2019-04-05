@@ -9,12 +9,36 @@ import Contact from '../screen/contact';
 import DrawerScreen from '../screen/DrawerScreen';
 // import Request from '../screen/request';
 import Licence from '../screen/licence';
-// import Settings from '../screen/settings';
+import Settings from '../screen/settings';
+
+
+import CPLicence from '../screen/cp/cplicence';
+import CPHome from '../screen/cp/cphome';
+import ManageCP from '../screen/cp/managecp';
+import CPAgentBalance from '../screen/cp/agentBalance';
+import CPStockTransfer from '../screen/cp/stockTransfer';
+import RechargeCustomer from '../screen/cp/rechargeCustomer';
+
+import SubCPLicence from '../screen/subcp/subCpLicence';
+import SubCPHome from '../screen/subcp/subCpHome';
+import ManageSubCP from '../screen/subcp/managesubcp';
+import SubCpRechargeCustomer from '../screen/subcp/rechargeCustomer';
+import SubCpStockTransfer from '../screen/subcp/stockTransfer';
+import SubCpAgentBalance from '../screen/subcp/agentBalance';
+
+import RetailerLicence from '../screen/retailer/retailerlicence';
+import RetailerHome from '../screen/retailer/retailerhome';
+import RetailerRechargeCustomer from '../screen/retailer/rechargeCustomer';
+
+import ChangePin from '../screen/changepin';
+import manageAccount from '../screen/manageAccount';
+
+
+import VendingVariable from '../screen/vending';
 
 const Tabs = createMaterialTopTabNavigator({
     Home: Home,
-    About: About,
-    Contact: Contact
+    Settings: Settings,
 },{
     tabBarOptions: {
         activeTintColor: '#000',
@@ -91,6 +115,33 @@ const licenceStackNavigator = createStackNavigator({
 //   },
 // });
 
+const aboutStackNavigator = createStackNavigator({
+  About: {
+    screen: About,
+    navigationOptions: ({ navigation }) => ({
+      title: 'About',
+      headerStyle: {
+        backgroundColor: '#ccc',
+      },
+      headerTintColor: '#000',
+    }),
+  },
+});
+
+const contactStackNavigator = createStackNavigator({
+  Contact: {
+    screen: Contact,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Contact',
+      headerStyle: {
+        backgroundColor: '#ccc',
+      },
+      headerTintColor: '#000',
+    }),
+  },
+});
+
+
 
 const DrawerNavigator = createDrawerNavigator({
     Home:{
@@ -98,7 +149,14 @@ const DrawerNavigator = createDrawerNavigator({
     },
     Licence: {
         screen: licenceStackNavigator
+    },
+    About: {
+        screen: aboutStackNavigator
+    },
+    Contact: {
+        screen: contactStackNavigator
     }
+
 },{
     initialRouteName: 'Home',
     contentComponent: DrawerScreen,
@@ -114,7 +172,7 @@ const StackNavigator = createStackNavigator({
     DrawerNavigator:{
         screen: DrawerNavigator,
          navigationOptions: ({ navigation }) => ({
-        title: 'PoC - Airtel NG SMS',  // Title to appear in status bar
+        title: 'PoC - Airtel NG ERC',  // Title to appear in status bar
         headerLeft: 
         <TouchableOpacity  onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
             <Image
@@ -132,6 +190,264 @@ const StackNavigator = createStackNavigator({
 
     })
     }, 
+    manageAccount: {
+      screen: manageAccount,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Manage Account',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+      })
+    },
+    CPLicence: {
+      screen: CPLicence,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Channel Partner Licence',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    CPHome: {
+      screen: CPHome,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Airtel Channel Partner',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    CPAgentBalance: {
+      screen: CPAgentBalance,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Check Agent/Retailer Balance',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    CPStockTransfer: {
+      screen: CPStockTransfer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Stock Transfer',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    RechargeCustomer: {
+      screen: RechargeCustomer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Recharge Customer',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    ManageCP: {
+      screen: ManageCP,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Manage CP Account',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    SubCPHome: {
+      screen: SubCPHome,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Airtel Sub Channel Partner',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    SubCPLicence: {
+      screen: SubCPLicence,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Sub Channel Partner Licence',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    SubCpRechargeCustomer: {
+      screen: SubCpRechargeCustomer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Recharge Customer',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    SubCpStockTransfer: {
+      screen: SubCpStockTransfer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Stock Transfer',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    SubCpAgentBalance: {
+      screen: SubCpAgentBalance,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Check Agent/Retailer Balance',  
+        headerStyle: {
+            backgroundColor: '#4169E1',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    ManageSubCP: {
+      screen: ManageSubCP,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Manage Sub CP Account',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    ChangePin: {
+      screen: ChangePin,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Change Airtel ERC Pin',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    RetailerHome: {
+      screen: RetailerHome,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Airtel Retailer',  
+        headerStyle: {
+            backgroundColor: '#000',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    RetailerLicence: {
+      screen: RetailerLicence,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Retailer Licence',  
+        headerStyle: {
+            backgroundColor: '#000',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    RetailerRechargeCustomer: {
+      screen: RetailerRechargeCustomer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Recharge Customer',  
+        headerStyle: {
+            backgroundColor: '#000',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    VendingVariable: {
+      screen: VendingVariable,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Manage Vending',  
+        headerStyle: {
+            backgroundColor: '#000080',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+   
 });
 
 

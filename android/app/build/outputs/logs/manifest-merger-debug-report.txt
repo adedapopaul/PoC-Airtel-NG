@@ -1,19 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
-INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
-INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
-INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
+INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
+INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
+INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
 MERGED from [:react-native-android-sms-listener] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-android-sms-listener\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-gesture-handler] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-get-sms-android] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-get-sms-android\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-15:12
+MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-27:12
+MERGED from [:react-native-immediate-phone-call] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-immediate-phone-call\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-sim-data] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-sim-data\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-keep-awake] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-keep-awake\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-device-info\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-22:12
 MERGED from [:react-native-imei] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-imei\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-13:12
 MERGED from [:expo-permissions] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\expo-permissions\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.58.6] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\react-native-0.58.6.aar\7f9453e71bbd708a4823384a2eb9d8fa\AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\3acd3cc6a8967c580e1ed6746a720cae\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2d69e2694904fc7c50687b365ec93042\AndroidManifest.xml:17:1-22:12
 MERGED from [:unimodules-react-native-adapter] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\@unimodules\react-native-adapter\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:expo-constants] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\expo-constants\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:expo-file-system] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\expo-file-system\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
@@ -34,33 +36,14 @@ MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilek
 MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\1da641a7fbbd5f56e3146c9ffc60d237\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\3f0991e832304218c573f25932fdd09b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\81375521ef846e280ec30d800b837a29\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\1ff61656ba9cd48ad8e760b1ea079308\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\4c0f6bc66aa3fada2b8947e07739f65a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\ab15b6bfd9b31f229954c86a001011d2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\a04e0e232d58a33740af376eb27a8712\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\92715b240f9882f3771a48e345d5b2fd\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\e5569a9c50b9b4bb6157fc0234e502cb\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\094b225cdb1212026c1a7ce19c528dd2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\af1f55a6f3a1769c61247fa4d693a455\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\299da1575b7a6bbac50b96ccbe991e9c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\be29561749d29681853bd3f87963dc73\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\9f6ce25a5d87d24756ccb0f3e65e9a13\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\c69bd470dd19af68465c53eaceb6c4e1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\7e15de6d8b6008a4cdd9794b5a4521dd\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ded655a353e5dfaf0c5262d9ac76f58d\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\bab6b9f53a39ab1bd3ac07303b601dd5\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\31be160c711f90827fbc7c01cdb14fcc\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\61340c5fc5324f72d145c719aa3ee3b8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\089f3acc7c8d4dc6232247a1572d269a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\a1cbe0a3221a7838ffbd45df236f4b63\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\fa90978769a87885a2bc0d16499a08a5\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ea7edd483eaeaa5a42f094e51f834782\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\c6e24ea5c7ff91fcb9efcc726177a414\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\4ce25daa1475ce03621aefa7ca34ffcb\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\c588ca68dd1eaf76a91b773542916eab\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\34ed7dbffd905418f4d9ec142156ce70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1f456c7c6a99cf9732b8dd9ae005292f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\942031aeb68f341e5d1f5f156972eec1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f7f087687011e61e93a52c91e14113c2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\2eb2703e863c3549999f002851ac07c2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\9b23551637a6736828d52655a46caf65\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\0965d16aee51192499223aadb9a9811a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\6b0497f4987582c629d07689016a4f2f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\272cb514d2f7fac8c2e913d37c7b5eef\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\88f67ed38dfb473bfd5e9ed3de77468a\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\81619c75fdef120979a940064f81b047\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\c41f55f0e40eabd63521a48322f9ec13\AndroidManifest.xml:2:1-9:12
@@ -68,21 +51,25 @@ MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Olamilekan\.grad
 MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\468662b5aba3acf3139834f82ee71fd9\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\1b88a5738d0e15faf6e617f3c6965b91\AndroidManifest.xml:1:1-3:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cc5c6ec34257b95775aa2bcda97df1fb\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e53d160e9672abeee7fd32e4768d3d03\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\51293191005b08176b16a8ab21dae7d2\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
-INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
-INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\97f9066b1eedb6f7e051f3974e4875e7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ef98e6845734d3f8d69b145fe95c5b4e\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
+INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
+INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
 	package
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:2:5-28
 		INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
 		INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-54:12
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:1-56:12
 		INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -194,8 +181,14 @@ uses-permission#android.permission.READ_PROFILE
 ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:31:7-73
 	android:name
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:31:24-70
+uses-permission#android.permission.CALL_PHONE
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:33:7-71
+	android:name
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:33:24-68
 application
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:34:5-52:19
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:36:5-54:19
+MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-25:19
+MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-25:19
 MERGED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-device-info\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-20:19
 MERGED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-device-info\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-20:19
 MERGED from [com.facebook.react:react-native:0.58.6] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\react-native-0.58.6.aar\7f9453e71bbd708a4823384a2eb9d8fa\AndroidManifest.xml:13:5-20
@@ -212,52 +205,46 @@ MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamile
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ded655a353e5dfaf0c5262d9ac76f58d\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ded655a353e5dfaf0c5262d9ac76f58d\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\bab6b9f53a39ab1bd3ac07303b601dd5\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\bab6b9f53a39ab1bd3ac07303b601dd5\AndroidManifest.xml:22:5-23:19
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:11:5-20
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\1b88a5738d0e15faf6e617f3c6965b91\AndroidManifest.xml:2:3-17
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\1b88a5738d0e15faf6e617f3c6965b91\AndroidManifest.xml:2:3-17
-	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ded655a353e5dfaf0c5262d9ac76f58d\AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:36:7-39
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:38:7-39
 	android:roundIcon
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:38:7-52
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:40:7-52
 	android:icon
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:37:7-41
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:39:7-41
 	android:allowBackup
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:39:7-34
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:41:7-34
 	android:theme
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:40:7-38
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:42:7-38
 	android:name
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:35:7-38
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:37:7-38
 activity#com.pocairtel.MainActivity
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:41:7-50:18
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:43:7-52:18
 	android:label
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:43:9-41
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:45:9-41
 	android:windowSoftInputMode
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:45:9-51
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:47:9-51
 	android:configChanges
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:44:9-79
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:46:9-79
 	android:name
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:42:9-37
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:44:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:46:9-49:25
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:48:9-51:25
 action#android.intent.action.MAIN
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:47:13-65
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:49:13-65
 	android:name
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:47:21-62
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:49:21-62
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:48:13-73
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:50:13-73
 	android:name
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:48:23-70
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:50:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:51:7-84
+ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:53:7-84
 	android:name
-		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:51:17-81
+		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:53:17-81
 uses-sdk
 INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
@@ -268,6 +255,10 @@ MERGED from [:react-native-gesture-handler] C:\Users\Olamilekan\Desktop\dapo\air
 MERGED from [:react-native-gesture-handler] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-get-sms-android] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-get-sms-android\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-get-sms-android] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-get-sms-android\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-immediate-phone-call] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-immediate-phone-call\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-immediate-phone-call] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-immediate-phone-call\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-sim-data] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-sim-data\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-sim-data] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-sim-data\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-keep-awake] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-keep-awake\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
@@ -280,8 +271,8 @@ MERGED from [:expo-permissions] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocA
 MERGED from [:expo-permissions] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\expo-permissions\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.58.6] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\react-native-0.58.6.aar\7f9453e71bbd708a4823384a2eb9d8fa\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.58.6] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\react-native-0.58.6.aar\7f9453e71bbd708a4823384a2eb9d8fa\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\3acd3cc6a8967c580e1ed6746a720cae\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\3acd3cc6a8967c580e1ed6746a720cae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2d69e2694904fc7c50687b365ec93042\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2d69e2694904fc7c50687b365ec93042\AndroidManifest.xml:20:5-44
 MERGED from [:unimodules-react-native-adapter] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\@unimodules\react-native-adapter\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:unimodules-react-native-adapter] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\@unimodules\react-native-adapter\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:expo-constants] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\expo-constants\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
@@ -322,60 +313,22 @@ MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamile
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\3f0991e832304218c573f25932fdd09b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\3f0991e832304218c573f25932fdd09b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\81375521ef846e280ec30d800b837a29\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\81375521ef846e280ec30d800b837a29\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\1ff61656ba9cd48ad8e760b1ea079308\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\1ff61656ba9cd48ad8e760b1ea079308\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\4c0f6bc66aa3fada2b8947e07739f65a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\4c0f6bc66aa3fada2b8947e07739f65a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\ab15b6bfd9b31f229954c86a001011d2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\ab15b6bfd9b31f229954c86a001011d2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\a04e0e232d58a33740af376eb27a8712\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\a04e0e232d58a33740af376eb27a8712\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\92715b240f9882f3771a48e345d5b2fd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\92715b240f9882f3771a48e345d5b2fd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\e5569a9c50b9b4bb6157fc0234e502cb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\e5569a9c50b9b4bb6157fc0234e502cb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\094b225cdb1212026c1a7ce19c528dd2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\094b225cdb1212026c1a7ce19c528dd2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\af1f55a6f3a1769c61247fa4d693a455\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\af1f55a6f3a1769c61247fa4d693a455\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\299da1575b7a6bbac50b96ccbe991e9c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\299da1575b7a6bbac50b96ccbe991e9c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\be29561749d29681853bd3f87963dc73\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\be29561749d29681853bd3f87963dc73\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\9f6ce25a5d87d24756ccb0f3e65e9a13\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\9f6ce25a5d87d24756ccb0f3e65e9a13\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\c69bd470dd19af68465c53eaceb6c4e1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\c69bd470dd19af68465c53eaceb6c4e1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\7e15de6d8b6008a4cdd9794b5a4521dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\7e15de6d8b6008a4cdd9794b5a4521dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ded655a353e5dfaf0c5262d9ac76f58d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ded655a353e5dfaf0c5262d9ac76f58d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\bab6b9f53a39ab1bd3ac07303b601dd5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\bab6b9f53a39ab1bd3ac07303b601dd5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\31be160c711f90827fbc7c01cdb14fcc\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\31be160c711f90827fbc7c01cdb14fcc\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\61340c5fc5324f72d145c719aa3ee3b8\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\61340c5fc5324f72d145c719aa3ee3b8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\089f3acc7c8d4dc6232247a1572d269a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\089f3acc7c8d4dc6232247a1572d269a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\a1cbe0a3221a7838ffbd45df236f4b63\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\a1cbe0a3221a7838ffbd45df236f4b63\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\fa90978769a87885a2bc0d16499a08a5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\fa90978769a87885a2bc0d16499a08a5\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ea7edd483eaeaa5a42f094e51f834782\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ea7edd483eaeaa5a42f094e51f834782\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\c6e24ea5c7ff91fcb9efcc726177a414\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\c6e24ea5c7ff91fcb9efcc726177a414\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\4ce25daa1475ce03621aefa7ca34ffcb\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\4ce25daa1475ce03621aefa7ca34ffcb\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\c588ca68dd1eaf76a91b773542916eab\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\c588ca68dd1eaf76a91b773542916eab\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\34ed7dbffd905418f4d9ec142156ce70\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\34ed7dbffd905418f4d9ec142156ce70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1f456c7c6a99cf9732b8dd9ae005292f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1f456c7c6a99cf9732b8dd9ae005292f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\942031aeb68f341e5d1f5f156972eec1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\942031aeb68f341e5d1f5f156972eec1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f7f087687011e61e93a52c91e14113c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f7f087687011e61e93a52c91e14113c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\2eb2703e863c3549999f002851ac07c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\2eb2703e863c3549999f002851ac07c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\9b23551637a6736828d52655a46caf65\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\9b23551637a6736828d52655a46caf65\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\0965d16aee51192499223aadb9a9811a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\0965d16aee51192499223aadb9a9811a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\6b0497f4987582c629d07689016a4f2f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\6b0497f4987582c629d07689016a4f2f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\272cb514d2f7fac8c2e913d37c7b5eef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\272cb514d2f7fac8c2e913d37c7b5eef\AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\88f67ed38dfb473bfd5e9ed3de77468a\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\88f67ed38dfb473bfd5e9ed3de77468a\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\81619c75fdef120979a940064f81b047\AndroidManifest.xml:5:5-7:41
@@ -388,8 +341,16 @@ MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Olamilekan\
 MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\468662b5aba3acf3139834f82ee71fd9\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cc5c6ec34257b95775aa2bcda97df1fb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cc5c6ec34257b95775aa2bcda97df1fb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e53d160e9672abeee7fd32e4768d3d03\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e53d160e9672abeee7fd32e4768d3d03\AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\51293191005b08176b16a8ab21dae7d2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\51293191005b08176b16a8ab21dae7d2\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\97f9066b1eedb6f7e051f3974e4875e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\97f9066b1eedb6f7e051f3974e4875e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ef98e6845734d3f8d69b145fe95c5b4e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ef98e6845734d3f8d69b145fe95c5b4e\AndroidManifest.xml:20:5-44
 INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -404,6 +365,28 @@ uses-permission#android.permission.RECEIVE_SMS
 ADDED from [:react-native-android-sms-listener] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-android-sms-listener\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-70
 	android:name
 		ADDED from [:react-native-android-sms-listener] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-android-sms-listener\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:22-67
+service#com.burnweb.rnsendintent.RNSendIntentModule
+ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:12:9-14:39
+	android:exported
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:14:13-36
+	android:name
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:13:13-71
+provider#com.burnweb.rnsendintent.FileProvider
+ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:16:9-24:20
+	android:grantUriPermissions
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:20:13-47
+	android:authorities
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:18:13-64
+	android:exported
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:17:13-65
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:21:13-23:54
+	android:resource
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:23:17-51
+	android:name
+		ADDED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:22:17-67
 receiver#com.learnium.RNDeviceInfo.RNDeviceReceiver
 ADDED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-device-info\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:12:9-19:20
 	android:enabled

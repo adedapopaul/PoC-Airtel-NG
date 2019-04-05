@@ -24,12 +24,9 @@ export default class  AboutScreen extends React.Component {
     return (
       <View style={{ flex: 1, flexDirection: 'column',justifyContent: 'center',alignItems: 'stretch', padding: 15}}>
 	      <ScrollView >
-	      <View style={{ paddingTop: 10}}>
-	        <Text style={{fontWeight: 'bold', fontSize: 20}}>About</Text>
-	      </View>
 	      <View>
 	      	<Text>
-	      	This software is solely develop by Jyqwins Limited. It is the property of Jyqwins Limited and the licence can be obtain by contacting the Lead developer, Dapo Aderemi.
+	      	This software is solely develop by Jyqwins Limited. It is the property of Jyqwins Limited and the licence can be obtain by contacting the Lead developer.
 	      	</Text>
 	      	<Text style={{ paddingTop: 8, fontWeight: 'bold'}}>Version</Text>
 	      	<Text> 1.0.10 </Text>

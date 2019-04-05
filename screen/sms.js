@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-// import Navigator from './route/route';
 import SmsAndroid  from 'react-native-get-sms-android';
 import { Platform, StyleSheet, Text, View,ScrollView,
         TouchableOpacity,TextInput,KeyboardAvoidingView,Button,Image} from 'react-native';
@@ -16,7 +15,7 @@ import RNSimData from 'react-native-sim-data'
 
 var filter = {
     box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
-    address: '*********', // sender's phone number
+    address: 'AirtelERC', // sender's phone number
     indexFrom: -1, // start from index 0
     maxCount: 2, // count of SMS to return each time
 };
@@ -39,8 +38,7 @@ export class SimClass extends React.Component{
   sendSMSNow = (sent, num, count)=>{
     if(sent === false ){
       let hold = this.state
-      let message= `********************`
-      let senderId = '***********'
+      
       // let count =1 
       if( count <= num ){
         openProgress() 
@@ -60,6 +58,7 @@ export class SimClass extends React.Component{
   listenSMSNow= ( sent, num, count) =>{
     if(sent === true){
       sendSMSNow( true, num, count)
+
           let subscription = SmsListener.addListener(message => {
             let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
             let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
@@ -67,15 +66,21 @@ export class SimClass extends React.Component{
               if (transactionIdRegex.test(message.body)) {
                   sendSMSNow(true, num, count) 
               }
-              else if (verificationCodeRegex.test(message.body)) {
+              else if (transactionIdRegex.test(message.body)) {
                   subscription.remove();
                   count++
                   sendSMSNow(false, num, count) 
               }
               else{
-                alert("Error:  " +'\nPlease Restart Process.' +'\nMessage Body: '+ message.body)
-                sendSMSNow(true, num, count)
-                KeepAwake.deactivate();
+                const stopSending = setTimeout(()=>{
+                  return true
+                }, 5*1000)
+                if(stopSending){
+                  alert("Network Error:  " +'\nPlease Restart Process.' )
+                  sendSMSNow(true, num, count)
+                  KeepAwake.deactivate();
+                }
+                
               }
           }) 
     }
@@ -265,7 +270,7 @@ _handleQuantity =quantity=>{
 
 
             <ProgressDialog
-              title="Sending SMS"
+              title="Processing..."
               activityIndicatorColor="blue"
               activityIndicatorSize="large"
               animationType="slide"

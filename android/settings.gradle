@@ -1,4 +1,8 @@
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
+include ':react-native-send-intent'
+project(':react-native-send-intent').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-send-intent/android')
+include ':react-native-immediate-phone-call'
+project(':react-native-immediate-phone-call').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-immediate-phone-call/android')
 include ':react-native-sim-data'
 project(':react-native-sim-data').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sim-data/android')
 include ':react-native-keep-awake'

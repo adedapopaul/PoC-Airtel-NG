@@ -121,6 +121,12 @@ _handleSerial =serial=>{
 				   <Text onPress={() => this.props.navigation.navigate('Request')} style={{ color: 'blue' }}> Request for a licence key </Text>
        			 </Text>
             </View>
+
+            <View style={{ flexDirection: 'row', paddingTop: 20}}>
+              <Text style={{ fontSize: 12 }}> Available om request. 
+           <Text onPress={() => this.props.navigation.navigate('7DaysTrial')} style={{ color: 'blue' }}> 7 Days Trial </Text>
+             </Text>
+            </View>
           </ScrollView>
         </View>
       </KeyboardAvoidingView>
