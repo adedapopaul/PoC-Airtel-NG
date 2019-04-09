@@ -38,7 +38,7 @@ export  class  SubCPHomeScreen extends React.Component {
 checkBalance = ()=> {
     let pin = this.props.subCp.pin
     let message = `BAL ${pin}`
-    SmsAndroid.autoSend( , (fail) => {
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -291,7 +291,7 @@ checkBalance = ()=> {
               </Button>
             </Left>
             <Body>
-              <Text onPress={()=>this.props.navigation.navigate('')}>Save Agent Details</Text>
+              <Text onPress={()=>this.props.navigation.navigate('SubCpSaveContact')}>Save Agent Details</Text>
             </Body>
             <Right>
               <Text>Stats</Text>

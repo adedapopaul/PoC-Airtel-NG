@@ -27,7 +27,7 @@ export  class StockTransferScreen extends Component {
   _activate = async () => {
     let pin = this.props.pin
     let message = `ST ${this.state.msidn} ${this.state.amount} ${pin}`
-    
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    

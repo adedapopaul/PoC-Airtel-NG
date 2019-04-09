@@ -48,7 +48,7 @@ componentWillReceiveProps(nextProps) {
 
 
 validateForm = () =>{
-  if(this.state.username && this.state.serial && !this.props.token){
+  if(this.state.username && this.state.serial ){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})

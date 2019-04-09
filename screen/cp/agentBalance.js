@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Item, Input, Icon, Picker, Toast, Right } from 'native-base';
-import { View, Text, StatusBar, Button} from 'react-native'
+import { View, Text, StatusBar, Button, TouchableOpacity } from 'react-native'
 import SmsListener from 'react-native-android-sms-listener'
 import SmsAndroid  from 'react-native-get-sms-android';
+import Contacts from 'react-native-contacts';
 import {cpAccountAction} from '../../redux/cp/manageCpAccount'
 import {licence} from '../../redux/action'
+import {contactDetials} from '../../redux/contact'
 import {connect} from 'react-redux'
 
 import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
@@ -21,8 +23,19 @@ export  class AgentBalanceScreen extends Component {
     };
 
   }
+  componentDidMount(){
+    if(!this.props.pin){
+      Toast.show({
+        text: "Please set the CP Pin before you continue",
+        duration: 5000,
+      })
+    }
+    else if(this.props.contactDetial){
+      this.setState({msidn: this.props.contactDetial.phone })
+    }
+  }
 
-
+ 
   _activate = async () => {
     let pin = this.props.pin
     let message = `BAL ${this.state.msidn} ${pin}`
@@ -103,8 +116,11 @@ _handlePhoneNumber =phoneNumber=>{
               onChangeText={this._handlePhoneNumber}
               value={this.state.msidn}
             /> 
+
             <Right>
-            <Icon active name="md-person-add" style={{ backgroundColor: "#48D1CC", }} />
+            <TouchableOpacity style={{padding: 20}} onPress={() =>this.props.navigation.navigate('DisplayContact') }>
+              <Icon active name="md-person-add" style={{ backgroundColor: "#48D1CC", }} />
+            </TouchableOpacity>
             </Right>
           </Item>
 
@@ -150,6 +166,7 @@ _handlePhoneNumber =phoneNumber=>{
 const mapStateToProps = state => ({
   token: state.licence.token,
   pin: state.cpAccount.cpAccount.pin,
+  contactDetial: state.cpContact.cpContact
 })
 
-export default connect(mapStateToProps, {cpAccountAction,licence})(AgentBalanceScreen)
+export default connect(mapStateToProps, {cpAccountAction, contactDetials, licence})(AgentBalanceScreen)

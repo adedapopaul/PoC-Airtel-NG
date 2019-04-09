@@ -25,7 +25,7 @@ const licenceReducer = (state = {}, action) => {
 // Vending Variable Reducer
 const vendingReducer = ( state={}, action) => {
   if (action.type === 'VENDING_VARIABLE') {
-    return merge( state, { variable : action.payload})
+    return merge( state, { vending : action.payload})
   }
 
   return state
@@ -70,13 +70,24 @@ const manageRetailerAccountReducer = ( state={}, action) => {
   return state
 }
 
+//handle contact selection for cp
+// MANAGE RETAILER ACCOUNT Reducer
+const selectedContact = ( state={}, action) => {
+  if (action.type === 'CONTACT_DETAILS') {
+    return merge( state, { cpContact : action.payload})
+  }
+
+  return state
+}
+
 const reducer = combineReducers({
-  licence: licenceReducer,
-  vending: vendingReducer, 
-  account: manageAccountReducer,
-  cpAccount: manageCPAccountReducer,
-  subCpAccount: manageSubCpAccountReducer,
-  retailerAccount: manageRetailerAccountReducer,
+  licence: licenceReducer,  //general licenece management reducer
+  vending: vendingReducer, //manage vending variable
+  account: manageAccountReducer,  // this is for the general account management
+  cpAccount: manageCPAccountReducer,  // manage the account/pin of the cp
+  subCpAccount: manageSubCpAccountReducer,  //manage the account/ pin of the sub cp
+  retailerAccount: manageRetailerAccountReducer,  // manage the account/pin of the retailer4
+  cpContact: selectedContact,
 
 })
 

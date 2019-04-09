@@ -26,7 +26,7 @@ export  class AgentBalanceScreen extends Component {
   _activate = async () => {
     let pin = this.props.pin
     let message = `BAL ${this.state.msidn} ${pin}`
-    
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    

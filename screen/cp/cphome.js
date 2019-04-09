@@ -45,7 +45,7 @@ componentDidMount(){
   checkBalance = ()=> {
     let pin = this.props.cp.pin
     let message = `BAL ${pin}`
-    SmsAndroid.autoSend(, (fail) => {
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -79,7 +79,8 @@ componentDidMount(){
                 
             //   }
 
-            this.setState({ message : message.body, dialogVisible: true,})
+            // this.setState({ message : message.body, dialogVisible: true,})
+            alert(message.body)
             subscription.remove();
 
           })
@@ -89,7 +90,7 @@ componentDidMount(){
   lastTransfer = ()=> {
     let pin = this.props.cp.pin
     let messageBody = `LR ${pin}`
-    SmsAndroid.autoSend( , (fail) => {
+    SmsAndroid.autoSend('433',messageBody , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -122,8 +123,8 @@ componentDidMount(){
             //     }
                 
             //   }
-
-            this.setState({ message : message.body, dialogVisible: true,})
+            alert(message.body)
+            // this.setState({ message : message.body, dialogVisible: true,})
             subscription.remove();
 
           })
@@ -135,7 +136,7 @@ componentDidMount(){
   dailyReport = ()=> {
     let pin = this.props.cp.pin
     let message = `DSR ${pin}`
-    SmsAndroid.autoSend( , (fail) => {
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -169,7 +170,8 @@ componentDidMount(){
                 
             //   }
 
-            this.setState({ message : message.body, dialogVisible: true,})
+            // this.setState({ message : message.body, dialogVisible: true,})
+            alert(message.body)
             subscription.remove();
           })
 
@@ -297,7 +299,7 @@ componentDidMount(){
               </Button>
             </Left>
             <Body>
-              <Text onPress={()=>this.props.navigation.navigate('')}>Save Sub CP Details</Text>
+              <Text onPress={()=>this.props.navigation.navigate('SaveContact')}>Save Sub CP Details</Text>
             </Body>
             <Right>
               <Text>Stats</Text>
@@ -324,22 +326,20 @@ componentDidMount(){
                 title="Message"
                 onTouchOutside={() => this.setState({dialogVisible: false})} 
                 onRequestClose = {() => this.setState({dialogVisible: false})}>
-              <View>
-                  <View>
+              
+                  <Body>
                   <Text style={{ fontSize: 16 }}>
                   {this.state.message} 
                   </Text>
-                  </View>
+                  </Body>
                   
-                  <View style={{paddingTop : 10}}> 
-                  <Button
-                  onPress={() => this.setState({dialogVisible: false})}
-                  title="Close"
-                  color="#48D1CC"
-                  accessibilityLabel="Close"
-                  />
-                </View>
-              </View>
+                  <Button block info
+                    style={{paddingTop : 10}}
+                    onPress={() => this.setState({dialogVisible: false})}
+                     primary>
+                   <Text> Close </Text>
+                  </Button>
+  
             </Dialog>
 
         </Content>

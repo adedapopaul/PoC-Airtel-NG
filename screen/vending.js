@@ -35,7 +35,7 @@ export  class VendingScreen extends Component {
   }
 
   componentDidMount(){
-    if(this.props.variable.phone){
+    if(this.props.variable){
       this.setState({
         msidn: this.props.variable.phone,
         pin: this.props.variable.pin,
@@ -49,7 +49,7 @@ export  class VendingScreen extends Component {
   _activate = async () => {
     // alert(this.state.selected2)
     if(+this.state.selected2){
-      this.props.vending({amount : this.state.selected2, phone: this.state.msidn, pin: this.state.pin, quantity: this.state.quantity})
+      this.props.vending({amount : this.state.selected2, phone: this.state.msidn, quantity: this.state.quantity})
       Toast.show({
         text: "Vending variables is saved.",
         buttonText: "Okay",
@@ -66,7 +66,7 @@ export  class VendingScreen extends Component {
 
 
 validateForm = () =>{
-  if(this.state.pin && this.state.quantity && this.state.msidn && this.state.selected2 && this.props.token){
+  if(this.state.quantity && this.state.msidn && this.state.selected2 && this.props.token){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -177,14 +177,7 @@ onValueChange2(value: string) {
             />
           </Item>
 
-          <Item>
-            <Icon active name='md-pin' />
-            <Input placeholder='Pin'
-              keyboardType={'numeric'}
-              onChangeText={this._handlePin}
-              value={this.state.pin}
-            />
-          </Item>
+         
 
           <View style={{ paddingTop : 20 }}>
             <Button
@@ -204,7 +197,7 @@ onValueChange2(value: string) {
 
 const mapStateToProps = state => ({
   token: state.licence.token,
-  variable: state.vending.variable,
+  variable: state.vending.vending,
 })
 
 export default connect(mapStateToProps, {vending,licence})(VendingScreen)

@@ -7,9 +7,14 @@ import Home from '../screen/sms';
 import About from '../screen/about';
 import Contact from '../screen/contact';
 import DrawerScreen from '../screen/DrawerScreen';
+import DisplayContact from '../screen/displayContact';
+import SaveContact from '../screen/saveContact';
+import SubCpSaveContact from '../screen/subcp/subCpSaveContact';
+import RetailerSaveContact from '../screen/retailer/retailerSaveContact';
 // import Request from '../screen/request';
 import Licence from '../screen/licence';
 import Settings from '../screen/settings';
+import GenerateEPin from '../screen/retailer/generateEpin';
 
 
 import CPLicence from '../screen/cp/cplicence';
@@ -172,7 +177,7 @@ const StackNavigator = createStackNavigator({
     DrawerNavigator:{
         screen: DrawerNavigator,
          navigationOptions: ({ navigation }) => ({
-        title: 'PoC - Airtel NG ERC',  // Title to appear in status bar
+        title: 'ERC- Airtel NG',  // Title to appear in status bar
         headerLeft: 
         <TouchableOpacity  onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
             <Image
@@ -439,6 +444,80 @@ const StackNavigator = createStackNavigator({
         title: 'Manage Vending',  
         headerStyle: {
             backgroundColor: '#000080',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    GenerateEPin: {
+      screen: GenerateEPin,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Generate E-Pin',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    DisplayContact: {
+      screen: DisplayContact,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Contact',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    SaveContact: {
+      screen: SaveContact,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Save Contact',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    SubCpSaveContact: {
+      screen: SubCpSaveContact,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Save Contact',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    RetailerSaveContact: {
+      screen: RetailerSaveContact,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Save Contact',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {

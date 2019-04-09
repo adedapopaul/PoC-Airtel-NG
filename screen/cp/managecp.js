@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Item, Input, Icon, Picker, Toast } from 'native-base';
 import { View, Text, Button, StatusBar} from 'react-native'
-
+import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
 import {cpAccountAction} from '../../redux/cp/manageCpAccount'
 import {licence} from '../../redux/action'
 import {connect} from 'react-redux'

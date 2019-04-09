@@ -35,7 +35,7 @@ export  class  RetailerHomeScreen extends React.Component {
   checkBalance = ()=> {
     let pin = this.props.account.pin
     let message = `BAL ${pin}`
-    SmsAndroid.autoSend( , (fail) => {
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -79,7 +79,7 @@ export  class  RetailerHomeScreen extends React.Component {
   lastTransfer = ()=> {
     let pin = this.props.account.pin
     let messageBody = `LR ${pin}`
-    SmsAndroid.autoSend( , (fail) => {
+    SmsAndroid.autoSend('433',messageBody , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -125,7 +125,7 @@ export  class  RetailerHomeScreen extends React.Component {
   dailyReport = ()=> {
     let pin = this.props.account.pin
     let message = `DSR ${pin}`
-    SmsAndroid.autoSend( , (fail) => {
+    SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
     }, (success)=> console.log(success))
    
@@ -191,7 +191,7 @@ export  class  RetailerHomeScreen extends React.Component {
               </Button>
             </Left>
             <Body>
-              <Text onPress={()=>this.props.navigation.navigate('')}>Generate E-Pin</Text>
+              <Text onPress={()=>this.props.navigation.navigate('GenerateEPin')}>Generate E-Pin</Text>
             </Body>
             <Right>
               <Text>Stock</Text>
@@ -256,6 +256,20 @@ export  class  RetailerHomeScreen extends React.Component {
           </ListItem>
           <ListItem icon>
             <Left>
+              <Button style={{ backgroundColor: "#A0522D" }}>
+                <Icon active name="md-person-add" />
+              </Button>
+            </Left>
+            <Body>
+              <Text onPress={()=>this.props.navigation.navigate('RetailerSaveContact')}>Save Client's Detail</Text>
+            </Body>
+            <Right>
+              <Text>Stats</Text>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
+          <ListItem icon>
+            <Left>
               <Button style={{ backgroundColor: "#007AFF" }}>
                 <Icon active name="md-stats" />
               </Button>
@@ -273,26 +287,26 @@ export  class  RetailerHomeScreen extends React.Component {
         </Content>
 
         <Dialog
-          visible={this.state.dialogVisible}
-          title="Message"
-          onTouchOutside={() => this.setState({dialogVisible: false})} 
-          onRequestClose = {() => this.setState({dialogVisible: false})}>
-        <View>
-            <View>
-            <Text style={{ fontSize: 16 }}>
-            {this.state.message} 
-            </Text>
-            </View>
-            
-            <View style={{paddingTop : 10}}> 
-            <Button
-            onPress={() => this.setState({dialogVisible: false})}
-            title="Close"
-            color="#48D1CC"
-            accessibilityLabel="Close"
-            />
-          </View>
-        </View>
+                visible={this.state.dialogVisible}
+                title="Message"
+                onTouchOutside={() => this.setState({dialogVisible: false})} 
+                onRequestClose = {() => this.setState({dialogVisible: false})}>
+              <View>
+                  <View>
+                  <Text style={{ fontSize: 16 }}>
+                  {this.state.message} 
+                  </Text>
+                  </View>
+                  
+                  <View style={{paddingTop : 10}}> 
+                  <Button
+                  onPress={() => this.setState({dialogVisible: false})}
+                  title="Close"
+                  color="#48D1CC"
+                  accessibilityLabel="Close"
+                  />
+                </View>
+              </View>
         </Dialog>
       </Container>
     );

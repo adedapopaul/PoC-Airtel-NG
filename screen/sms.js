@@ -38,7 +38,8 @@ export class SimClass extends React.Component{
   sendSMSNow = (sent, num, count)=>{
     if(sent === false ){
       let hold = this.state
-      
+      let message= `EP ${hold.phoneNumber} ${hold.amount} 1 ${hold.password}`
+      let senderId = '433'
       // let count =1 
       if( count <= num ){
         openProgress() 
