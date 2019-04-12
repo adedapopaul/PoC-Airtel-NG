@@ -35,6 +35,8 @@ target 'pocAirtel' do
 
   pod 'react-native-keep-awake', :path => '../node_modules/react-native-keep-awake'
 
+  pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
+
   target 'pocAirtelTests' do
     inherit! :search_paths
   end

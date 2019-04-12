@@ -10,7 +10,7 @@ import { Platform, StyleSheet, Text, View,ScrollView,
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux'
 
-import {licence} from '../../redux/action'
+import {cpLicences} from '../../redux/action'
 
 
 
@@ -42,7 +42,7 @@ componentWillReceiveProps(nextProps) {
 }
 
  _activate = async () => {
-    this.props.licence(this.state.username, this.state.serial)
+    this.props.cpLicences(this.state.username, this.state.serial)
   }
 
 
@@ -130,10 +130,10 @@ _handleSerial =serial=>{
 
 
 const mapStateToProps = state => ({
-  cpToken: state.licence.token,
-  cpActivationMessage : state.licence.activationMessage
+  cpToken: state.cpLicence.token,
+  cpActivationMessage : state.cpLicence.activationMessage
 })
 
-export default connect(mapStateToProps, {licence})(CpLicenceScreen)
+export default connect(mapStateToProps, {cpLicences})(CpLicenceScreen)
 
 

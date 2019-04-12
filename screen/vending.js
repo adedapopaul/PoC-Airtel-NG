@@ -3,7 +3,7 @@ import { Container, Header, Content, Item, Input, Icon, Picker, Toast, Right } f
 import { View, Text, StatusBar, Button} from 'react-native'
 
 import {vending} from '../redux/vendaction'
-import {licence} from '../redux/action'
+import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {connect} from 'react-redux'
 
 export  class VendingScreen extends Component {
@@ -66,7 +66,7 @@ export  class VendingScreen extends Component {
 
 
 validateForm = () =>{
-  if(this.state.quantity && this.state.msidn && this.state.selected2 && this.props.token){
+  if(this.state.quantity && this.state.msidn && this.state.selected2 && this.props.token && (this.props.cpToken || this.props.subCpToken  || this.props.retailerToken)){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -198,6 +198,9 @@ onValueChange2(value: string) {
 const mapStateToProps = state => ({
   token: state.licence.token,
   variable: state.vending.vending,
+  cpToken: state.cpLicence.token,
+  subCpToken: state.subCpLicence.token,
+  retailerToken: state.retailerLicence.token,
 })
 
-export default connect(mapStateToProps, {vending,licence})(VendingScreen)
+export default connect(mapStateToProps, {vending,licence, cpLicence, subCpLicence, retailerLicence})(VendingScreen)

@@ -5,7 +5,7 @@ import {StatusBar} from 'react-native'
 
 import {NavigationActions} from 'react-navigation';
 
-import {licence} from '../redux/action'
+import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {connect} from 'react-redux'
 
 
@@ -117,14 +117,15 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.token){
+                if(this.props.cpToken){
                     this.props.navigation.navigate('CPHome')
                   }
                   else{
                     Toast.show({
-                      text: "Device is not licenced. Please contact developer to obtain licence",
+                      text: "CP Account is not Licence. Please contact developer to obtain licence",
                       buttonText: "Okay",
-                      duration: 3000
+                      duration: 3000,
+                      type: 'danger'
                     })
                   }
                 }
@@ -143,14 +144,15 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.token){
+                if(this.props.subCpToken){
                     this.props.navigation.navigate('SubCPHome')
                   }
                   else{
                     Toast.show({
-                      text: "Device is not licenced. Please contact developer to obtain licence",
+                      text: "Sub CP Account is not Licence. Please contact developer to obtain licence",
                       buttonText: "Okay",
-                      duration: 3000
+                      duration: 3000,
+                      type: 'warning'
                     })
                   }
                 }
@@ -169,14 +171,15 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.token){
+                if(this.props.retailerToken){
                     this.props.navigation.navigate('RetailerHome')
                   }
                   else{
                     Toast.show({
-                      text: "Device is not licenced. Please contact developer to obtain licence",
+                      text: "Retailer Account is not Licence. Please contact developer to obtain licence",
                       buttonText: "Okay",
-                      duration: 3000
+                      duration: 3000,
+                      type: 'danger'
                     })
                   }
                 }
@@ -194,7 +197,7 @@ export  class  SettingsScreen extends React.Component {
               </Button>
             </Left>
             <Body>
-              <Text onPress={()=>this.props.navigation.navigate('Licence')}>Licence</Text>
+              <Text onPress={()=>this.props.navigation.navigate('LicenceHome')}>Licence</Text>
             </Body>
             <Right>
               <Text>Generic</Text>
@@ -212,7 +215,10 @@ export  class  SettingsScreen extends React.Component {
 const mapStateToProps = state => ({
   token: state.licence.token,
   cptoken: state.licence.cptoken,
-  activationMessage : state.licence.activationMessage
+  activationMessage : state.licence.activationMessage,
+  cpToken: state.cpLicence.token,
+  subCpToken: state.subCpLicence.token,
+  retailerToken: state.retailerLicence.token,
 })
 
-export default connect(mapStateToProps, {licence})(SettingsScreen)
+export default connect(mapStateToProps, {licence, cpLicence, subCpLicence, retailerLicence})(SettingsScreen)

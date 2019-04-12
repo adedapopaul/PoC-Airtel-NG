@@ -22,6 +22,63 @@ const licenceReducer = (state = {}, action) => {
   }
 }
 
+const cpLicenceReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'CP_GET_PHONE_IMEI':
+      return merge(state, { phoneImei : action.payload})
+  case 'CP_GET_PHONE_SERIAL':
+    return merge(state, { phoneSerial : action.payload})
+  case 'CP_GET_PHONE_NUMBER':
+    return merge(state, { phoneNumber : action.payload})
+    case 'CP_LICENCE_FULFILLED':
+      return merge(state, {token: action.payload})
+    case 'CP_SET_ACTIVATION_MESSAGE':
+      return merge(state, {activationMessage: action.payload})
+    case 'CP_LICENCE_REJECTED':
+      return merge(state, {licenceError: action.payload})
+    default:
+      return state
+  }
+}
+
+const subCpLicenceReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'SUB_CP_GET_PHONE_IMEI':
+      return merge(state, { phoneImei : action.payload})
+  case 'SUB_CP_GET_PHONE_SERIAL':
+    return merge(state, { phoneSerial : action.payload})
+  case 'SUB_CP_GET_PHONE_NUMBER':
+    return merge(state, { phoneNumber : action.payload})
+    case 'SUB_CP_LICENCE_FULFILLED':
+      return merge(state, {token: action.payload})
+    case 'SUB_CP_SET_ACTIVATION_MESSAGE':
+      return merge(state, {activationMessage: action.payload})
+    case 'SUB_CP_LICENCE_REJECTED':
+      return merge(state, {licenceError: action.payload})
+    default:
+      return state
+  }
+}
+
+const retailerLicenceReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'RETAILER_GET_PHONE_IMEI':
+      return merge(state, { phoneImei : action.payload})
+  case 'RETAILER_GET_PHONE_SERIAL':
+    return merge(state, { phoneSerial : action.payload})
+  case 'RETAILER_GET_PHONE_NUMBER':
+    return merge(state, { phoneNumber : action.payload})
+    case 'RETAILER_LICENCE_FULFILLED':
+      return merge(state, {token: action.payload})
+    case 'RETAILER_SET_ACTIVATION_MESSAGE':
+      return merge(state, {activationMessage: action.payload})
+    case 'RETAILER_LICENCE_REJECTED':
+      return merge(state, {licenceError: action.payload})
+    default:
+      return state
+  }
+}
+
 // Vending Variable Reducer
 const vendingReducer = ( state={}, action) => {
   if (action.type === 'VENDING_VARIABLE') {
@@ -82,6 +139,9 @@ const selectedContact = ( state={}, action) => {
 
 const reducer = combineReducers({
   licence: licenceReducer,  //general licenece management reducer
+  cpLicence: cpLicenceReducer,
+  subCpLicence: subCpLicenceReducer,
+  retailerLicence: retailerLicenceReducer,
   vending: vendingReducer, //manage vending variable
   account: manageAccountReducer,  // this is for the general account management
   cpAccount: manageCPAccountReducer,  // manage the account/pin of the cp

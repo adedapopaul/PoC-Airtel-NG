@@ -7,7 +7,7 @@ import KeepAwake from 'react-native-keep-awake';
 import RNSimData from 'react-native-sim-data'
 import {accountAction} from '../../redux/accountAction'
 import {vending} from '../../redux/vendaction'
-import {licence} from '../../redux/action'
+import {licence,cpLicence, subCpLicence, retailerLicence} from '../../redux/action'
 import {connect} from 'react-redux'
 
 import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
@@ -149,7 +149,7 @@ export  class GenerateEpinScreen extends Component {
 
 
 validateForm = () =>{
-  if(+this.state.selected2  &&  this.props.token){
+  if(+this.state.selected2  &&  this.props.token && (this.props.cpToken || this.props.subCpToken  || this.props.retailerToken)){
     if(!this.props.account.pin){
       Toast.show({
         text: "Please ensure you save your pin in Manage Account Session",
@@ -199,14 +199,14 @@ onValueChange2(value: string) {
             <Left>
             <Text> MSISDN :</Text>
             </Left>
-            <Body><Text> {this.state.amount} </Text></Body>
+            <Body><Text> {this.state.msidn} </Text></Body>
           </ListItem>
 
           <ListItem icon>
             <Left>
             <Text> Amount :</Text>
             </Left>
-            <Body><Text> {this.state.msidn} </Text></Body>
+            <Body><Text> {this.state.amount} </Text></Body>
           </ListItem>
 
           <ListItem icon>
@@ -265,6 +265,9 @@ const mapStateToProps = state => ({
   token: state.licence.token,
   account: state.account.account,
   variable: state.vending.vending,
+  cpToken: state.cpLicence.token,
+  subCpToken: state.subCpLicence.token,
+  retailerToken: state.retailerLicence.token
 })
 
-export default connect(mapStateToProps, {accountAction, vending, licence})(GenerateEpinScreen)
+export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence})(GenerateEpinScreen)

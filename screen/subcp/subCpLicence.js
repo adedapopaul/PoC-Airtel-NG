@@ -10,7 +10,7 @@ import { Container, Header, Content, Form, Item, Input, Label } from 'native-bas
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux'
 
-import {licence} from '../../redux/action'
+import {subCpLicences} from '../../redux/action'
 
 
 
@@ -28,7 +28,7 @@ export class SubCpLicenceScreen extends React.Component {
 
 
 componentWillReceiveProps(nextProps) {
-    if (nextProps.cpToken) {
+    if (nextProps.subCpToken) {
       this.setState({
         disable: false,
         serial: '',
@@ -42,12 +42,12 @@ componentWillReceiveProps(nextProps) {
 }
 
  _activate = async () => {
-    this.props.licence(this.state.username, this.state.serial)
+    this.props.subCpLicences(this.state.username, this.state.serial)
   }
 
 
 validateForm = () =>{
-  if(this.state.username && this.state.serial && !this.props.cpToken){
+  if(this.state.username && this.state.serial && !this.props.subCpToken){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -89,7 +89,7 @@ _handleSerial =serial=>{
       <Container style={{ padding : 10}} >
         <Content>
         <Text style={{ paddingTop : 10}}>Activation of device require an Internet access. Please ensure your device is connected to the internet.</Text>
-        <Text style={{color: 'blue'}} > {this.props.cpActivationMessage} </Text>
+        <Text style={{color: 'blue'}} > {this.props.subCpActivationMessage} </Text>
         <Text style={{color: 'red'}}>{this.state.errorText}</Text>
           <Form>
             <Item floatingLabel>
@@ -133,11 +133,11 @@ _handleSerial =serial=>{
 
 
 const mapStateToProps = state => ({
-  cpToken: state.licence.token,
-  cpActivationMessage : state.licence.activationMessage
+  subCpToken: state.subCpLicence.token,
+  subCpActivationMessage : state.subCpLicence.activationMessage
 })
 
-export default connect(mapStateToProps, {licence})(SubCpLicenceScreen)
+export default connect(mapStateToProps, {subCpLicences})(SubCpLicenceScreen)
 
 
 

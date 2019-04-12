@@ -4,7 +4,7 @@ import {StatusBar, View} from 'react-native'
 
 import SmsListener from 'react-native-android-sms-listener'
 import SmsAndroid  from 'react-native-get-sms-android';
-import {licence} from '../../redux/action'
+import {licence, subCpLicence} from '../../redux/action'
 import {connect} from 'react-redux'
 import {subCpAccountAction} from '../../redux/subcp/manageSubCpAccount'
 
@@ -18,8 +18,19 @@ export  class  SubCPHomeScreen extends React.Component {
     this.state = {
       disable: false,
       message: '',
+      isOn: 'Off',
+      activation: false,
     };
 
+  }
+
+  componentDidMount(){
+    if(this.props.subCpToken){
+      this.setState({
+        activation: true,
+        isOn: 'On'
+      })
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -184,7 +195,8 @@ checkBalance = ()=> {
               <Text>Sub CP Activation Status</Text>
             </Body>
             <Right>
-              <Switch value={false} />
+              <Text>{this.state.isOn}</Text>
+              <Switch value={this.state.activation} />
             </Right>
           </ListItem>
           <ListItem icon>
@@ -347,6 +359,8 @@ const mapStateToProps = state => ({
   token: state.licence.token,
   activationMessage : state.licence.activationMessage,
   subCp: state.subCpAccount.subCpAccount,
+  subCpToken: state.subCpLicence.token,
+
 })
 
-export default connect(mapStateToProps, {licence, subCpAccountAction})(SubCPHomeScreen)
+export default connect(mapStateToProps, {licence, subCpAccountAction, subCpLicence})(SubCPHomeScreen)

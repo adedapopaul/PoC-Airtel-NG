@@ -3,7 +3,7 @@ import {createStackNavigator, createDrawerNavigator, createMaterialTopTabNavigat
 import { DrawerActions } from 'react-navigation';
 import {View,Text,StyleSheet,Platform,TouchableOpacity,Image,StatusBar} from 'react-native';
 
-import Home from '../screen/sms';
+import Home from '../screen/home';
 import About from '../screen/about';
 import Contact from '../screen/contact';
 import DrawerScreen from '../screen/DrawerScreen';
@@ -13,6 +13,7 @@ import SubCpSaveContact from '../screen/subcp/subCpSaveContact';
 import RetailerSaveContact from '../screen/retailer/retailerSaveContact';
 // import Request from '../screen/request';
 import Licence from '../screen/licence';
+import LicenceHome from '../screen/licenceHome';
 import Settings from '../screen/settings';
 import GenerateEPin from '../screen/retailer/generateEpin';
 
@@ -487,6 +488,21 @@ const StackNavigator = createStackNavigator({
       screen: SaveContact,
       navigationOptions: ({ navigation }) => ({
         title: 'Save Contact',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    LicenceHome: {
+      screen: LicenceHome,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Licence',  
         headerStyle: {
             backgroundColor: '#483D8B',
         },

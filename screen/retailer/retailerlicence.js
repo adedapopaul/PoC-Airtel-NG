@@ -10,7 +10,7 @@ import { Container, Header, Content, Form, Item, Input, Label } from 'native-bas
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux'
 
-import {licence} from '../../redux/action'
+import {retailerLicences} from '../../redux/action'
 
 
 
@@ -21,14 +21,14 @@ export class RetailerLicenceScreen extends React.Component {
       username: '',
       serial: '',
       disable: true,
-      cpActivationMessage: ''
+      retailerActivationMessage: ''
     };
 
   }
 
 
 componentWillReceiveProps(nextProps) {
-    if (nextProps.cpToken) {
+    if (nextProps.retailerToken) {
       this.setState({
         disable: false,
         serial: '',
@@ -36,18 +36,18 @@ componentWillReceiveProps(nextProps) {
       })
     }else{
       this.setState({
-        cpActivationMessage: 'Your Device has not been activated'
+        retailerActivationMessage: 'Your Device has not been activated'
       })
     }
 }
 
  _activate = async () => {
-    this.props.licence(this.state.username, this.state.serial)
+    this.props.retailerLicences(this.state.username, this.state.serial)
   }
 
 
 validateForm = () =>{
-  if(this.state.username && this.state.serial && !this.props.cpToken){
+  if(this.state.username && this.state.serial && !this.props.retailerToken){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -90,7 +90,7 @@ _handleSerial =serial=>{
       < StatusBar barStyle= 'dark-content' hidden={ true } backgroundcolor= '#000080' networkActivityIndicatorVisible = {true} />
         <Content>
         <Text style={{ paddingTop : 10}}>Activation of device require an Internet access. Please ensure your device is connected to the internet.</Text>
-        <Text style={{color: 'blue'}} > {this.props.cpActivationMessage} </Text>
+        <Text style={{color: 'blue'}} > {this.props.retailerActivationMessage} </Text>
         <Text style={{color: 'red'}}>{this.state.errorText}</Text>
           <Form>
             <Item floatingLabel>
@@ -134,11 +134,11 @@ _handleSerial =serial=>{
 
 
 const mapStateToProps = state => ({
-  cpToken: state.licence.token,
-  cpActivationMessage : state.licence.activationMessage
+  retailerToken: state.retailerLicence.token,
+  retailerActivationMessage : state.retailerLicence.activationMessage
 })
 
-export default connect(mapStateToProps, {licence})(RetailerLicenceScreen)
+export default connect(mapStateToProps, {retailerLicences})(RetailerLicenceScreen)
 
 
 

@@ -3,7 +3,7 @@ import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Rig
 import { StatusBar, View } from 'react-native'
 import SmsListener from 'react-native-android-sms-listener'
 import SmsAndroid  from 'react-native-get-sms-android';
-import {licence} from '../../redux/action'
+import {licence, retailerLicence} from '../../redux/action'
 import {connect} from 'react-redux'
 import {accountAction} from '../../redux/accountAction'
 
@@ -16,8 +16,19 @@ export  class  RetailerHomeScreen extends React.Component {
     super(props);
     this.state = {
       disable: false,
+      isOn: 'Off',
+      activation: false,
     };
 
+  }
+
+  componentDidMount(){
+    if(this.props.retailerToken){
+      this.setState({
+        activation: true,
+        isOn: 'On'
+      })
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -181,7 +192,8 @@ export  class  RetailerHomeScreen extends React.Component {
               <Text>Retailer Activation Status</Text>
             </Body>
             <Right>
-              <Switch value={false} />
+              <Text>{this.state.isOn}</Text>
+              <Switch value={this.state.activation} />
             </Right>
           </ListItem>
           <ListItem icon>
@@ -318,6 +330,7 @@ const mapStateToProps = state => ({
   token: state.licence.token,
   activationMessage : state.licence.activationMessage,
   account: state.account.account,
+  retailerToken: state.retailerLicence.token,
 })
 
-export default connect(mapStateToProps, {licence, accountAction})(RetailerHomeScreen)
+export default connect(mapStateToProps, {licence, accountAction, retailerLicence})(RetailerHomeScreen)

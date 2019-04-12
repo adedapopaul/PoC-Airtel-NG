@@ -3,7 +3,7 @@ import { Container, Header, Content,List, ListItem, Item, Input, Icon,Left, Pick
 import { View, StatusBar, } from 'react-native'
 import SmsListener from 'react-native-android-sms-listener'
 import SmsAndroid  from 'react-native-get-sms-android';
-import {licence} from '../../redux/action'
+import {licence, cpLicence} from '../../redux/action'
 import {connect} from 'react-redux'
 import {cpAccountAction} from '../../redux/cp/manageCpAccount'
 
@@ -18,6 +18,7 @@ export  class  cpHomeScreen extends React.Component {
       disable: false,
       activation: false,
       message: '',
+      isOn: 'Off'
     };
 
   }
@@ -25,7 +26,8 @@ export  class  cpHomeScreen extends React.Component {
 componentDidMount(){
     if(this.props.cpToken){
       this.setState({
-        activation: true
+        activation: true,
+        isOn: 'On'
       })
     }
 }
@@ -192,6 +194,7 @@ componentDidMount(){
               <Text>CP Activation Status</Text>
             </Body>
             <Right>
+            <Text>{this.state.isOn}</Text>
               <Switch value={this.state.activation} />
             </Right>
           </ListItem>
@@ -353,6 +356,7 @@ const mapStateToProps = state => ({
   token: state.licence.token,
   activationMessage : state.licence.activationMessage,
   cp: state.cpAccount.cpAccount,
+  cpToken: state.cpLicence.token,
 })
 
-export default connect(mapStateToProps, {licence, cpAccountAction})(cpHomeScreen)
+export default connect(mapStateToProps, {licence, cpAccountAction, cpLicence})(cpHomeScreen)
