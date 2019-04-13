@@ -3,6 +3,7 @@ package com.pocairtel;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.burnweb.rnsendintent.RNSendIntentPackage;
 import com.github.wumke.RNImmediatePhoneCall.RNImmediatePhoneCallPackage;
@@ -55,6 +56,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNHTMLtoPDFPackage(),
             new ReactNativeContacts(),
             new RNSendIntentPackage(),
             new RNImmediatePhoneCallPackage(),

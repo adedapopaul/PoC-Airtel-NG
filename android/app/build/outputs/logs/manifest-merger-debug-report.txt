@@ -7,6 +7,7 @@ INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\
 MERGED from [:react-native-android-sms-listener] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-android-sms-listener\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-gesture-handler] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-get-sms-android] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-get-sms-android\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-15:12
+MERGED from [:react-native-html-to-pdf] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-html-to-pdf\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-contacts] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-contacts\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-27:12
 MERGED from [:react-native-immediate-phone-call] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-immediate-phone-call\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
@@ -31,6 +32,7 @@ MERGED from [:unimodules-task-manager-interface] C:\Users\Olamilekan\Desktop\dap
 MERGED from [:unimodules-core] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\@unimodules\core\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:unimodules-image-loader-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-image-loader-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:unimodules-sensors-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-sensors-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
+MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:17:1-29:12
@@ -156,6 +158,8 @@ ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:24:22-68
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:25:5-81
+MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:11:5-81
+MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:25:22-78
 uses-permission#android.permission.WRITE_SETTINGS
@@ -262,6 +266,8 @@ MERGED from [:react-native-gesture-handler] C:\Users\Olamilekan\Desktop\dapo\air
 MERGED from [:react-native-gesture-handler] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-get-sms-android] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-get-sms-android\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-get-sms-android] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-get-sms-android\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-html-to-pdf] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-html-to-pdf\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-html-to-pdf] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-html-to-pdf\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-contacts] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-contacts\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-contacts] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-contacts\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-send-intent] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-send-intent\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
@@ -310,6 +316,8 @@ MERGED from [:unimodules-image-loader-interface] C:\Users\Olamilekan\Desktop\dap
 MERGED from [:unimodules-image-loader-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-image-loader-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:unimodules-sensors-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-sensors-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:unimodules-sensors-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-sensors-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:20:5-44

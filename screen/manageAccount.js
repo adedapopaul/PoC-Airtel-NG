@@ -16,6 +16,7 @@ export class ManageAccount extends Component {
       username: '',
       password: '',
       pin: '',
+      companyName: '',
       disable: true,
       errorText: ''
     };
@@ -28,13 +29,14 @@ componentDidMount(){
       profile: this.props.account.profile,
       username: this.props.account.username,
       password: this.props.account.password,
+      companyName: this.props.account.companyName,
       pin: this.props.account.pin
     })
   }
 }
 
   _activate = async () => {
-    this.props.accountAction({profile: this.state.profile, username: this.state.username, pin: this.state.pin, password: this.state.password})
+    this.props.accountAction({profile: this.state.profile, username: this.state.username, pin: this.state.pin, password: this.state.password, companyName: this.state.companyName})
     Toast.show({
       text: "Account Information saved successfully.",
       duration: 3000
@@ -43,7 +45,7 @@ componentDidMount(){
 
 
 validateForm = () =>{
-  if(this.state.password && this.state.profile && this.state.username && this.state.pin && this.props.token){
+  if(this.state.password && this.state.profile && this.state.username && this.state.pin && this.state.companyName && this.props.token){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -54,6 +56,19 @@ _handleProfile =old=>{
   if (old.length>=0 && old.length <= 30 ){
     this.setState({
       profile: old,
+      errorText : ""
+      }, this.validateForm)
+  }else{
+    this.setState({
+      errorText : "Please input valid Name"
+    })
+  }
+}
+
+_handleCompany =old=>{
+  if (old.length>=0 && old.length <= 30 ){
+    this.setState({
+      companyName: old,
       errorText : ""
       }, this.validateForm)
   }else{
@@ -125,6 +140,15 @@ _handlePin =old=>{
               value={this.state.username}
             />
           </Item>
+
+          <Item>
+            <Icon active name='md-house' />
+            <Input placeholder='Company Name'
+              onChangeText={this._handleCompany}
+              value={this.state.companyName}
+            />
+          </Item>
+
 
           <Item>
             <Icon active name='md-pint' />
