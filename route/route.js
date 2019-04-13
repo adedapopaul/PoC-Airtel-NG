@@ -16,6 +16,7 @@ import Licence from '../screen/licence';
 import LicenceHome from '../screen/licenceHome';
 import Settings from '../screen/settings';
 import GenerateEPin from '../screen/retailer/generateEpin';
+import Print from '../screen/print';
 
 
 import CPLicence from '../screen/cp/cplicence';
@@ -532,6 +533,20 @@ const StackNavigator = createStackNavigator({
       screen: RetailerSaveContact,
       navigationOptions: ({ navigation }) => ({
         title: 'Save Contact',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+    Print: {
+      screen: Print,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Print E-Pin',  
         headerStyle: {
             backgroundColor: '#483D8B',
         },
