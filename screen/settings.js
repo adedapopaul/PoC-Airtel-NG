@@ -186,7 +186,7 @@ export  class  SettingsScreen extends React.Component {
               }>Retailer</Text>
             </Body>
             <Right>
-              <Text>agent</Text>
+              <Text>Agent</Text>
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>

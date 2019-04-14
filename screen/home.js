@@ -22,10 +22,20 @@ export  class HomeScreen extends Component {
                     Toast.show({
                       text: 'Please activate your device',
                       duration: 3000,
+                      type: 'warning'
                     })
                   } 
-                  else{ this.props.navigation.navigate('GenerateEPin') }}} 
-                >
+                  else{
+                    if(!this.props.retailerToken){
+                      Toast.show({
+                        text: 'Please activate required licence for this feature.',
+                        duration: 3000,
+                        type: 'warning'
+                      })
+                    }
+                    else{
+                   this.props.navigation.navigate('GenerateEPin') }}} 
+                }>
                   <Text>Generate E-Pin</Text>
                 </TouchableOpacity>
                 <Right>
@@ -39,9 +49,20 @@ export  class HomeScreen extends Component {
                   Toast.show({
                     text: 'Please activate your device',
                     duration: 3000,
+                    type: 'warning'
                   })
-                }  this.props.navigation.navigate('Print') }} 
-              >
+                } 
+                else{
+                  if(!this.props.retailerToken){
+                      Toast.show({
+                        text: 'Please activate required licence for this feature.',
+                        duration: 3000,
+                        type: 'warning'
+                      })
+                    }
+                    else{
+                 this.props.navigation.navigate('Print') }}} 
+              }>
                 <Text>Print</Text>
               </TouchableOpacity>
               <Right>

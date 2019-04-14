@@ -142,7 +142,7 @@ _handlePin =old=>{
           </Item>
 
           <Item>
-            <Icon active name='md-house' />
+            <Icon active name='md-home' />
             <Input placeholder='Company Name'
               onChangeText={this._handleCompany}
               value={this.state.companyName}

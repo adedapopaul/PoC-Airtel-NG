@@ -96,18 +96,18 @@ class NavigationDrawerStructure extends Component {
 // });
 
 
-const licenceStackNavigator = createStackNavigator({
-  Licence: {
-    screen: Licence,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Licence',
-      headerStyle: {
-        backgroundColor: '#ccc',
-      },
-      headerTintColor: '#000',
-    }),
-  },
-});
+// const licenceStackNavigator = createStackNavigator({
+//   Licence: {
+//     screen: Licence,
+//     navigationOptions: ({ navigation }) => ({
+//       title: 'Licence',
+//       headerStyle: {
+//         backgroundColor: '#ccc',
+//       },
+//       headerTintColor: '#000',
+//     }),
+//   },
+// });
 
 // const settingsStackNavigator = createStackNavigator({
 //   Settings: {
@@ -122,31 +122,31 @@ const licenceStackNavigator = createStackNavigator({
 //   },
 // });
 
-const aboutStackNavigator = createStackNavigator({
-  About: {
-    screen: About,
-    navigationOptions: ({ navigation }) => ({
-      title: 'About',
-      headerStyle: {
-        backgroundColor: '#ccc',
-      },
-      headerTintColor: '#000',
-    }),
-  },
-});
+// const aboutStackNavigator = createStackNavigator({
+//   About: {
+//     screen: About,
+//     navigationOptions: ({ navigation }) => ({
+//       title: 'About',
+//       headerStyle: {
+//         backgroundColor: '#ccc',
+//       },
+//       headerTintColor: '#000',
+//     }),
+//   },
+// });
 
-const contactStackNavigator = createStackNavigator({
-  Contact: {
-    screen: Contact,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Contact',
-      headerStyle: {
-        backgroundColor: '#ccc',
-      },
-      headerTintColor: '#000',
-    }),
-  },
-});
+// const contactStackNavigator = createStackNavigator({
+//   Contact: {
+//     screen: Contact,
+//     navigationOptions: ({ navigation }) => ({
+//       title: 'Contact',
+//       headerStyle: {
+//         backgroundColor: '#ccc',
+//       },
+//       headerTintColor: '#000',
+//     }),
+//   },
+// });
 
 
 
@@ -154,15 +154,6 @@ const DrawerNavigator = createDrawerNavigator({
     Home:{
         screen: Tabs
     },
-    Licence: {
-        screen: licenceStackNavigator
-    },
-    About: {
-        screen: aboutStackNavigator
-    },
-    Contact: {
-        screen: contactStackNavigator
-    }
 
 },{
     initialRouteName: 'Home',
@@ -184,7 +175,7 @@ const StackNavigator = createStackNavigator({
         <TouchableOpacity  onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
             <Image
             source={require('../images/menu-button.png')}
-            style={{ width: 30, height: 30, marginLeft: 8 }}
+            style={{ width: 20, height: 20, marginLeft: 8 }}
           />
         </TouchableOpacity>,
         headerStyle: {
@@ -547,6 +538,51 @@ const StackNavigator = createStackNavigator({
       screen: Print,
       navigationOptions: ({ navigation }) => ({
         title: 'Print E-Pin',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    Licence: {
+      screen: Licence,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Device Licence',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    About: {
+      screen: About,
+      navigationOptions: ({ navigation }) => ({
+        title: 'About Us',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    Contact: {
+      screen: Contact,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Contact Us',  
         headerStyle: {
             backgroundColor: '#483D8B',
         },

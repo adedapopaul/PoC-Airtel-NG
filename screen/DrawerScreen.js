@@ -14,8 +14,8 @@ import SmsAndroid  from 'react-native-get-sms-android';
 import styles from '../styles/styles';
 
 import {connect} from 'react-redux'
-
-import {licence} from '../redux/action'
+import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
+import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {accountAction} from '../redux/accountAction'
 
 export class DrawerScreen extends Component {
@@ -24,6 +24,7 @@ export class DrawerScreen extends Component {
     super(props);
     this.state = {
       disable: false,
+      message: '',
     };
 
   }
@@ -86,15 +87,14 @@ export class DrawerScreen extends Component {
                 
             //   }
 
-            alert(message.body)
+            this.setState({ message : message.body, dialogVisible: true,})
+            subscription.remove();
           })
 
   }
 
   render () {
     return (
-      // <View>
-      //   <ScrollView>
           <Container>
 
           <Card>
@@ -146,7 +146,17 @@ export class DrawerScreen extends Component {
             <Body>
               <Text onPress={()=>{
                   if(this.props.token){
-                    this.props.navigation.navigate('VendingVariable')
+                    if(!this.props.retailerToken){
+                      Toast.show({
+                        text: "Please activate required licence for this feature.",
+                        buttonText: "Okay",
+                        duration: 3000,
+                        type: 'warning'
+                      })
+                    }
+                    else{
+                      this.props.navigation.navigate('VendingVariable')
+                    }
                   }
                   else{
                     Toast.show({
@@ -213,7 +223,23 @@ export class DrawerScreen extends Component {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
-          </Container>
+
+          <Dialog
+            visible={this.state.dialogVisible}
+            title="Message"
+            onTouchOutside={() => this.setState({dialogVisible: false})} 
+            onRequestClose = {() => this.setState({dialogVisible: false})}
+          >
+            <Text style={{ fontSize: 16, paddingBottom: 14 }}>
+              {this.state.message} 
+            </Text>
+
+            <Button block onPress={() => this.setState({dialogVisible: false})}>
+              <Text>Close</Text>
+            </Button>
+          </Dialog>
+
+    </Container>
       
     );
   }
@@ -223,7 +249,10 @@ export class DrawerScreen extends Component {
 const mapStateToProps = state => ({
   phoneNumber: state.licence.phoneNumber,
   token: state.licence.token,
-  account: state.vending
+  account: state.vending,
+  cpToken: state.cpLicence.token,
+  subCpToken: state.subCpLicence.token,
+  retailerToken: state.retailerLicence.token,
 })
 
-export default connect(mapStateToProps, {licence,accountAction})(DrawerScreen)
+export default connect(mapStateToProps, {licence,accountAction, cpLicence, subCpLicence, retailerLicence})(DrawerScreen)

@@ -29,7 +29,7 @@ export  class GenerateEpinScreen extends Component {
   }
 
   componentDidMount(){
-    if(this.props.account){
+    if(this.props.account && this.props.variable ){
       this.setState({
         msidn: this.props.variable.phone,
         amount: this.props.variable.amount,

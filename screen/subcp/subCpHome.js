@@ -326,27 +326,19 @@ checkBalance = ()=> {
           </ListItem>
          
             <Dialog
-                visible={this.state.dialogVisible}
-                title="Message"
-                onTouchOutside={() => this.setState({dialogVisible: false})} 
-                onRequestClose = {() => this.setState({dialogVisible: false})}>
-              <View>
-                  <View>
-                  <Text style={{ fontSize: 16 }}>
-                  {this.state.message} 
-                  </Text>
-                  </View>
-                  
-                  <View style={{paddingTop : 10}}> 
-                  <Button
-                  onPress={() => this.setState({dialogVisible: false})}
-                  title="Close"
-                  color="#48D1CC"
-                  accessibilityLabel="Close"
-                  />
-                </View>
-              </View>
-            </Dialog>
+            visible={this.state.dialogVisible}
+            title="Message"
+            onTouchOutside={() => this.setState({dialogVisible: false})} 
+            onRequestClose = {() => this.setState({dialogVisible: false})}
+          >
+            <Text style={{ fontSize: 16, paddingBottom: 14 }}>
+              {this.state.message} 
+            </Text>
+
+            <Button block onPress={() => this.setState({dialogVisible: false})}>
+              <Text>Close</Text>
+            </Button>
+          </Dialog>
 
         </Content>
       </Container>

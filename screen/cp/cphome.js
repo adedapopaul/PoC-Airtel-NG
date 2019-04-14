@@ -81,8 +81,7 @@ componentDidMount(){
                 
             //   }
 
-            // this.setState({ message : message.body, dialogVisible: true,})
-            alert(message.body)
+            this.setState({ message : message.body, dialogVisible: true,})
             subscription.remove();
 
           })
@@ -125,8 +124,7 @@ componentDidMount(){
             //     }
                 
             //   }
-            alert(message.body)
-            // this.setState({ message : message.body, dialogVisible: true,})
+            this.setState({ message : message.body, dialogVisible: true,})
             subscription.remove();
 
           })
@@ -173,7 +171,7 @@ componentDidMount(){
             //   }
 
             // this.setState({ message : message.body, dialogVisible: true,})
-            alert(message.body)
+            this.setState({ message : message.body, dialogVisible: true,})
             subscription.remove();
           })
 
@@ -325,25 +323,19 @@ componentDidMount(){
           </ListItem>
 
           <Dialog
-                visible={this.state.dialogVisible}
-                title="Message"
-                onTouchOutside={() => this.setState({dialogVisible: false})} 
-                onRequestClose = {() => this.setState({dialogVisible: false})}>
-              
-                  <Body>
-                  <Text style={{ fontSize: 16 }}>
-                  {this.state.message} 
-                  </Text>
-                  </Body>
-                  
-                  <Button block info
-                    style={{paddingTop : 10}}
-                    onPress={() => this.setState({dialogVisible: false})}
-                     primary>
-                   <Text> Close </Text>
-                  </Button>
-  
-            </Dialog>
+            visible={this.state.dialogVisible}
+            title="Message"
+            onTouchOutside={() => this.setState({dialogVisible: false})} 
+            onRequestClose = {() => this.setState({dialogVisible: false})}
+          >
+            <Text style={{ fontSize: 16, paddingBottom: 14 }}>
+              {this.state.message} 
+            </Text>
+
+            <Button block onPress={() => this.setState({dialogVisible: false})}>
+              <Text>Close</Text>
+            </Button>
+          </Dialog>
 
         </Content>
       </Container>
