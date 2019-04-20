@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pocairtel"
+    package="com.ercairtelng"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -37,10 +37,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" /> <!-- Required by older versions of Google Play services to create GCM registration tokens -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" /> <!-- Permissions required for GCM -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- END OPTIONAL PERMISSIONS -->
     <application
-        android:name="com.pocairtel.MainApplication"
+        android:name="com.ercairtelng.MainApplication"
         android:allowBackup="false"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
@@ -48,7 +48,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.pocairtel.MainActivity"
+            android:name="com.ercairtelng.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize" >
@@ -66,7 +66,7 @@
 
         <provider
             android:name="com.burnweb.rnsendintent.FileProvider"
-            android:authorities="com.pocairtel.fileprovider"
+            android:authorities="com.ercairtelng.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

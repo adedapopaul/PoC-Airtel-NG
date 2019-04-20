@@ -1,11 +1,65 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Toast, Left } from 'native-base';
-import {SectionList, TouchableOpacity, StyleSheet,View} from 'react-native'
-
+import {SectionList, TouchableOpacity, StyleSheet,View, PermissionsAndroid, Platform} from 'react-native'
+// import {requestStoragePermission} from '../permissions'
 import {connect} from 'react-redux'
 import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 
 export  class HomeScreen extends Component {
+
+ componentDidMount = () => {
+   //Checking for the permission just after component loaded
+    
+    if (Platform.OS === 'android') {
+        //Calling the permission function
+       this.requestStoragePermission();
+       this.requestStoragePermission2();
+    }else{
+        alert('IOS device found');
+    }
+ }
+
+
+requestStoragePermission= async function () {
+      try {
+        const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,{
+            'title': 'ERC-Airtel Permission',
+            'message': 'ERC-Airtel require permission to read your storage media'
+          }
+        )
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          //To Check, If Permission is granted
+          console.log("You can use the storage");
+        } else {
+          alert("App might not perform well because permission is denied.");
+        }
+      } catch (err) {
+        // alert("err",err);
+        console.warn(err)
+      }
+  }
+
+  requestStoragePermission2= async function () {
+      try {
+        const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,{
+            'title': 'ERC-Airtel Permission',
+            'message': 'ERC-Airtel require permission to read your storage media'
+          }
+        )
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          //To Check, If Permission is granted
+          console.log("You can use the storage");
+        } else {
+          alert("App might not perform well because permission is denied.");
+        }
+      } catch (err) {
+        // alert("err",err);
+        console.warn(err)
+      }
+  }
+
   render() {
     return (
       <Container>
@@ -38,9 +92,7 @@ export  class HomeScreen extends Component {
                 }>
                   <Text>Generate E-Pin</Text>
                 </TouchableOpacity>
-                <Right>
-                  <Icon name="arrow-forward" />
-                </Right>
+                
              </CardItem>
              <CardItem>
               <Icon active style={{ color: 'orange', fontSize: 30}} name="md-paper" />
@@ -65,9 +117,6 @@ export  class HomeScreen extends Component {
               }>
                 <Text>Print</Text>
               </TouchableOpacity>
-              <Right>
-                <Icon name="arrow-forward" />
-              </Right>
              </CardItem>
              <CardItem>
               <Icon active style={{ color: 'red', fontSize: 30}}  name="md-analytics" />
@@ -82,9 +131,6 @@ export  class HomeScreen extends Component {
               >
               <Text>Channel Partner</Text>
               </TouchableOpacity>
-              <Right>
-                <Icon name="arrow-forward" />
-              </Right>
              </CardItem>
              <CardItem>
               <Icon active style={{ color: 'pink', fontSize: 30}}  name="md-person" />
@@ -98,9 +144,6 @@ export  class HomeScreen extends Component {
                 else{ this.props.navigation.navigate('SubCPHome') }}} >
               <Text>Sub Channel Partner</Text>
               </TouchableOpacity>
-              <Right>
-                <Icon name="arrow-forward" />
-              </Right>
              </CardItem>
              <CardItem>
               <Icon active name="md-flame" />
@@ -113,9 +156,6 @@ export  class HomeScreen extends Component {
                 else{ this.props.navigation.navigate('RetailerHome') }}} >
                 <Text>Retailer</Text>
               </TouchableOpacity>
-              <Right>
-                <Icon name="arrow-forward" />
-              </Right>
              </CardItem>
            </Card>
         </Content>

@@ -7,6 +7,8 @@ import KeepAwake from 'react-native-keep-awake';
 import RNSimData from 'react-native-sim-data'
 import {accountAction} from '../../redux/accountAction'
 import {vending} from '../../redux/vendaction'
+
+import {requestSmsPermission} from '../../permissions'
 import {licence,cpLicence, subCpLicence, retailerLicence} from '../../redux/action'
 import {connect} from 'react-redux'
 
@@ -94,7 +96,7 @@ export  class GenerateEpinScreen extends Component {
                       alert("Timeout Error:  " +'\nResponse is taking too long.' +'\nPlease Restart Process.' )
                       this.sendSMSNow(true, num, count)
                       KeepAwake.deactivate();
-                    }, 2*60*1000)
+                    }, 5*60*1000)
                 
                 SmsListener.addListener(message => {
 
@@ -126,25 +128,34 @@ export  class GenerateEpinScreen extends Component {
     const num= +this.state.quantity
     var count = 1
 
-    if(this.state.selected2 === '1'){
-      this.sendSMSNow(sent, num, count)
-      Toast.show({
-        text: 'Processing. Please wait...',
-        duration: 1000,
-      })
-    }
-    else if( this.state.selected2 === '2'){
-      Toast.show({
-        text: 'Feature is currently not enabled',
-        duration: 3000,
-      })
-    }
-    else {
-      Toast.show({
-        text: 'Please select appropriate option.',
-        duration: 3000,
-      })
-    }
+    this.props.requestSmsPermission()
+      .then(function (didGetPermission: boolean) {
+            if (didGetPermission) {
+                if(this.state.selected2 === '1'){
+                  this.sendSMSNow(sent, num, count)
+                  Toast.show({
+                    text: 'Processing. Please wait...',
+                    duration: 1000,
+                  })
+                }
+                else if( this.state.selected2 === '2'){
+                  Toast.show({
+                    text: 'Feature is currently not enabled',
+                    duration: 3000,
+                  })
+                }
+                else {
+                  Toast.show({
+                    text: 'Please select appropriate option.',
+                    duration: 3000,
+                  })
+                }
+            } else {
+                alert("The app can not perform without the permission.")
+            }
+        })
+
+    
   }
 
 

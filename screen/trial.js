@@ -10,25 +10,25 @@ import { Container, Header, Content, Form, Item, Input, Label } from 'native-bas
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux'
 
-import {retailerLicences} from '../../redux/action'
+import {trialLicence} from '../redux/action'
 
 
 
-export class RetailerLicenceScreen extends React.Component {
+export class TrialLicenceScreen extends React.Component {
 	constructor(props) {
     super(props);
     this.state = {
       username: '',
       serial: '',
       disable: true,
-      retailerActivationMessage: ''
+      trialActivationMessage: ''
     };
 
   }
 
 
 componentWillReceiveProps(nextProps) {
-    if (nextProps.retailerToken) {
+    if (nextProps.trialToken) {
       this.setState({
         disable: false,
         serial: '',
@@ -36,13 +36,13 @@ componentWillReceiveProps(nextProps) {
       })
     }else{
       this.setState({
-        retailerActivationMessage: 'Your Device has not been activated'
+        trialActivationMessage: 'Your Device has not been activated'
       })
     }
 }
 
  _activate = async () => {
-    this.props.retailerLicences(this.state.username, this.state.serial)
+    this.props.trialLicence(this.state.username, this.state.serial)
   }
 
 
@@ -89,8 +89,8 @@ _handleSerial =serial=>{
       <Container style={{ padding : 10}} >
       < StatusBar barStyle= 'dark-content' hidden={ true } backgroundcolor= '#000080' networkActivityIndicatorVisible = {true} />
         <Content>
-        <Text style={{ paddingTop : 10}}>Activation of device require an Internet access. Please ensure your device is connected to the internet.</Text>
-        <Text style={{color: 'blue'}} > {this.props.retailerActivationMessage} </Text>
+        <Text style={{ paddingTop : 10}}>This is a 7 days trial Licence. Please ensure your device is connected to the internet.</Text>
+        <Text style={{color: 'blue'}} > {this.props.trialActivationMessage} </Text>
         <Text style={{color: 'red'}}>{this.state.errorText}</Text>
           <Form>
             <Item floatingLabel>
@@ -121,11 +121,7 @@ _handleSerial =serial=>{
             </View>
             
           </Form>
-          <View style={{ flexDirection: 'row', paddingTop: 20}}>
-              <Text style={{ fontSize: 12 }}> This is a new device. 
-           <Text onPress={() => this.props.navigation.navigate('7DaysTrial')} style={{ color: 'blue' }}> Request for 7 Days Trial </Text>
-             </Text>
-            </View>
+         
         </Content>
       </Container>
     );
@@ -134,11 +130,11 @@ _handleSerial =serial=>{
 
 
 const mapStateToProps = state => ({
-  retailerToken: state.retailerLicence.token,
-  retailerActivationMessage : state.retailerLicence.activationMessage
+  trialToken: state.retailerLicence.token,
+  trialActivationMessage : state.retailerLicence.activationMessage
 })
 
-export default connect(mapStateToProps, {retailerLicences})(RetailerLicenceScreen)
+export default connect(mapStateToProps, {trialLicence})(TrialLicenceScreen)
 
 
 

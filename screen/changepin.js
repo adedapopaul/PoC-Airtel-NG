@@ -6,7 +6,7 @@ import SmsAndroid  from 'react-native-get-sms-android';
 import SmsListener from 'react-native-android-sms-listener'
 
 import {connect} from 'react-redux'
-
+import {requestSmsPermission} from '../permissions'
 import {licence} from '../redux/action'
 
 export class ChangePinScreen extends Component {
@@ -30,42 +30,27 @@ export class ChangePinScreen extends Component {
   _activate = async () => {
     let message= `CP ${this.state.old} ${this.state.newpin} ${this.state.confirm}`
     let senderId = '433'
-    SmsAndroid.autoSend(senderId, message, (fail) => {
-      alert("Failed with this error: " + fail)
-    }, (success)=> console.log(success))
+    this.props.requestSmsPermission()
+      .then(function (didGetPermission: boolean) {
+            if (didGetPermission) {
 
-    Toast.show({
-      text: 'Processing. Please wait...',
-      duration: 5000,
-    })
+              SmsAndroid.autoSend(senderId, message, (fail) => {
+                alert("Failed with this error: " + fail)
+              }, (success)=> console.log(success))
 
-    let subscription = SmsListener.addListener(message => {
-            // let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
-            // let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
+              Toast.show({
+                text: 'Processing. Please wait...',
+                duration: 5000,
+              })
 
-            //   if (transactionIdRegex.test(message.body)) {
-            //       sendSMSNow(true, num, count) 
-            //   }
-            //   else if (transactionIdRegex.test(message.body)) {
-            //       subscription.remove();
-            //       count++
-            //       sendSMSNow(false, num, count) 
-            //   }
-            //   else{
-            //     const stopSending = setTimeout(()=>{
-            //       return true
-            //     }, 5*1000)
-            //     if(stopSending){
-            //       alert("Network Error:  " +'\nPlease Restart Process.' )
-            //       sendSMSNow(true, num, count)
-            //       KeepAwake.deactivate();
-            //     }
-                
-            //   }
-
-            alert(message.body)
-          })
-
+              let subscription = SmsListener.addListener(message => {
+                  alert(message.body)
+              })
+            }
+            else{
+              alert("App can't work without the permission")
+            }
+        })
     
   }
 

@@ -51,7 +51,7 @@ export class DrawerScreen extends Component {
 
 
   checkBalance = ()=> {
-    let pin = this.props.account.pin
+    let pin = this.props.accountPin.pin
     let message = `BAL ${pin}`
     SmsAndroid.autoSend('433',message , (fail) => {
       alert("Failed with this error: " + fail)
@@ -250,6 +250,7 @@ const mapStateToProps = state => ({
   phoneNumber: state.licence.phoneNumber,
   token: state.licence.token,
   account: state.vending,
+  accountPin: state.account.account,
   cpToken: state.cpLicence.token,
   subCpToken: state.subCpLicence.token,
   retailerToken: state.retailerLicence.token,

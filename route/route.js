@@ -11,12 +11,13 @@ import DisplayContact from '../screen/displayContact';
 import SaveContact from '../screen/saveContact';
 import SubCpSaveContact from '../screen/subcp/subCpSaveContact';
 import RetailerSaveContact from '../screen/retailer/retailerSaveContact';
-// import Request from '../screen/request';
+import Request from '../screen/request';
 import Licence from '../screen/licence';
 import LicenceHome from '../screen/licenceHome';
 import Settings from '../screen/settings';
 import GenerateEPin from '../screen/retailer/generateEpin';
 import Print from '../screen/print';
+import Trial from '../screen/trial';
 
 
 import CPLicence from '../screen/cp/cplicence';
@@ -583,6 +584,36 @@ const StackNavigator = createStackNavigator({
       screen: Contact,
       navigationOptions: ({ navigation }) => ({
         title: 'Contact Us',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    Trial: {
+      screen: Trial,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Trial',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
+
+    Request: {
+      screen: Request,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Request for Licence',  
         headerStyle: {
             backgroundColor: '#483D8B',
         },

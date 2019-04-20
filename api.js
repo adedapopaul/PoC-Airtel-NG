@@ -95,6 +95,30 @@ export const retailerLicence = async (username, serial, imei, phoneSerial) => {
 }
 
 
+export const trialLicence = async (username, serial, imei, phoneSerial) => {
+	const response = await fetch('https://cardgenerationserver.herokuapp.com/v1/trialLicence/licence', {
+	    method: 'PUT',
+	    headers: {'content-type': 'application/json'},
+	    body: JSON.stringify({
+		    username,
+		    serial,
+		    imei,
+		    phoneSerial,
+		    // address: `${hold.address}`,
+		}),
+	  })
+	const responseJson = await response.json()
+  	if (responseJson.licenceKey) {
+	     return responseJson.licenceKey
+	  }
+	  else { 
+   	 		// const errMessage = responseJson.message
+  			alert(responseJson.message)
+  	 	}
+
+}
+
+
 export const getPhoneImei = ()=> {
 	IMEI.getImei().then(imei => {
     	return imei

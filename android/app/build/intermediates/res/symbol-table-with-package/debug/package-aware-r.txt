@@ -1,4 +1,4 @@
-com.pocairtel
+com.ercairtelng
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -938,7 +938,6 @@ string common_google_play_services_enable_title
 string common_google_play_services_install_button
 string common_google_play_services_install_text
 string common_google_play_services_install_title
-string common_google_play_services_notification_channel_name
 string common_google_play_services_notification_ticker
 string common_google_play_services_unknown_issue
 string common_google_play_services_unsupported_text
@@ -950,7 +949,6 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
-string gcm_fallback_notification_channel_label
 string image_button_description
 string image_description
 string link_description

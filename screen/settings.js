@@ -16,6 +16,7 @@ export  class  SettingsScreen extends React.Component {
     this.state = {
       disable: false,
       showToast: false,
+      isOn: 'Off'
     };
 
   }
@@ -23,7 +24,8 @@ export  class  SettingsScreen extends React.Component {
   componentDidMount(){
     if(this.props.token){
       this.setState({
-        disable: true
+        disable: true,
+        isOn: 'On'
       })
     }
   }
@@ -54,6 +56,7 @@ export  class  SettingsScreen extends React.Component {
               <Text>Activation Status</Text>
             </Body>
             <Right>
+              <Text>{this.state.isOn}</Text>
               <Switch value={this.state.disable} />
             </Right>
           </ListItem>

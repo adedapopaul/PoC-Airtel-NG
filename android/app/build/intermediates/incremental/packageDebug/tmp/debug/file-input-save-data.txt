@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Apr 13 20:21:07 WAT 2019
+#Thu Apr 18 20:15:01 WAT 2019
 20.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 143.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 237.path=lib/x86/libfb.so
@@ -285,7 +285,7 @@
 160.baseType=DIRECTORY
 213.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 253.set=NATIVE_RESOURCE
-37.path=com/tom_roush/fontbox/resources/cmap/78ms-RKSJ-H
+37.path=airtel.jpg
 131.set=ASSET
 246.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 176.set=DEX
@@ -474,7 +474,7 @@
 91.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 215.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 273.set=ASSET
-39.path=airtel.jpg
+39.path=com/tom_roush/fontbox/resources/cmap/GBT-EUC-V
 151.set=NATIVE_RESOURCE
 248.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 5.set=ASSET
@@ -987,7 +987,7 @@
 90.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 214.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 263.set=ASSET
-38.path=com/tom_roush/fontbox/resources/cmap/GBT-EUC-V
+38.path=com/tom_roush/fontbox/resources/cmap/78ms-RKSJ-H
 141.set=ASSET
 247.base=C\:\\Users\\Olamilekan\\Desktop\\dapo\\airtel-poc\\pocAirtel\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 186.set=ASSET

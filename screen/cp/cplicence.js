@@ -117,7 +117,7 @@ _handleSerial =serial=>{
 
             <View style={{ flexDirection: 'row', paddingTop: 20}}>
               <Text style={{ fontSize: 12 }}> This is a new device. 
-           <Text onPress={() => this.props.navigation.navigate('7DaysTrial')} style={{ color: 'blue' }}> Request for 7 Days Trial </Text>
+           <Text onPress={() => this.props.navigation.navigate('Trial')} style={{ color: 'blue' }}> Request for 7 Days Trial </Text>
              </Text>
             </View>
           </ScrollView>

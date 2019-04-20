@@ -15,7 +15,8 @@ import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
 
 var extractedPin=[]
 var extractedPin20Page=[]
-var date = new Date().toDateString()
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 var brief = 'Dial:*126*(15 digit numbers)# Press Yes/Ok<br/>The customer care number is 111.';
 var random = function() {return Math.floor(Math.random() * (1470068782340978 - 10068000040008 + 1) ) + 50068000040008}
 var htmlTableTag = `<style type="text/css">
@@ -29,6 +30,7 @@ var htmlTableTag = `<style type="text/css">
                         padding:10px;
                         margin-left:auto;
                         margin-right:auto;
+                        font-size:11px;
                         /*letter-spacing:1px;*/
                         line-height:5px;
                         /*background-color:rgb(153,255,0);*/
@@ -49,10 +51,12 @@ var htmlTableTag = `<style type="text/css">
                       td.l{
                         margin-right:10px;
                         padding-right:10px;
+                        font-size:9px;
                       }
                       td.r{
                         margin-left:10px;
                         padding-left:10px;
+                        font-size:9px;
                       }
                       .pb{
                         page-break-after:always;
@@ -79,28 +83,18 @@ var htmlTableTag = `<style type="text/css">
                         text-decoration:none;
                         position:relative;
                       }
-                      del:after{
-                        content:'';
-                        font-size:inherit;
-                        display:block;
-                        position:absolute;
-                        right:0;
-                        left:0;
-                        top:40%;
-                        bottom:40%;
-                        border-top:1px solid #000;
-                        border-bottom:1px solid #000;
-                      }
+                      
                       i{
                         font-size:9px;
                       }
                       td table tr td{
-                        line-height:16px;
+                        line-height:14px;
                         float:left;
+                        font-size:11px;
                       }
                       td table{
-                        margin-top:4px;
-                        margin-bottom:3px;
+                        margin-top:6px;
+                        margin-bottom:7px;
                       }
                       table table{
                         /*background-image:url(RCGM500.jpg);
@@ -114,113 +108,74 @@ var htmlTableTag = `<style type="text/css">
                     
 
 var htmlTableTag20perPage = `<style type="text/css">
-                                body{
-                                  font-size:12px;
-                                }
-                                
-                                div{
-                                  width:800px;
-                                  padding:10px;
-                                  margin-left:auto;
-                                  margin-right:auto;
-                                  letter-spacing:1px;
-                                  /*background:url(nine-mobile.png);*/
-                                  background-repeat:repeat;
-                                  overflow:auto;
-                                  position:relative;
-                                }
-                                div:before{
-                                  content:"";
-                                  position:fixed;
-                                  left:0;
-                                  right:0;
-                                  z-index:-1;
-                                  
-                                  display:block;
-                                  /*background-image:url(EtisalatLogo.jpg);*/
-                                  width:100%;
-                                  height:100%;
-                                  
-                                  -webkit-filter:blur(3px);
-                                  -moz-filter:blur(3px);
-                                  -o-filter:blur(3px);
-                                  -ms-filter:blur(3px);
-                                  filter:blur(3px);
-                                  z-index:-1;
-                                }
-                                b{
-                                  font-size:17px;
-                                }
-                                div.page{
-                                  width:2480px;
-                                  height:3508px;
-                                  padding:20px, 50px, 100px, 50px;
-                                }
-                                table{
-                                  alignment-adjust:central;
-                                  margin-left:auto;
-                                  margin-right:auto;
-                                }
-                                td.l{
-                                  margin-right:70px;
-                                  padding-right:70px;
-                                }
-                                td.r{
-                                  margin-left:70px;
-                                  padding-left:70px;
-                                }
-                                td.l, td.r{
-                                  line-height:14px;
-                                }
-                                table table{
-                                  padding:4px;
-                                  /*margin-bottom:5px;*/
-                                  margin-top:5px;
-                                  /*background-image:url(RCGM500.jpg);*/
-                                  /*background-image:url(9mobilee.png);*/
-                                  background-size:100% 100%;
-                                }
-                                .pb{
-                                  page-break-after:always;
-                                }
-                                @page{
-                                  size:A4;
-                                }
-                                .right{
-                                  float:right;
-                                }
-                                .left{
-                                  float:left;
-                                }
-                                .padleft{
-                                  padding-left:50px;
-                                  margin-left:50px;
-                                }
-                                del{
-                                  text-decoration:none;
-                                  position:relative;
-                                }
-                                del:after{
-                                  content:'';
-                                  font-size:inherit;
-                                  display:block;
-                                  position:absolute;
-                                  right:0;
-                                  left:0;
-                                  top:40%;
-                                  bottom:40%;
-                                  border-top:1px solid #000;
-                                  border-bottom:1px solid #000;
-                                }
-                                i{
-                                  font-size:11px;
-                                }
-                                img{
-                                  height:15px;
-                                  width:35px;
-                                  padding-right:40px;
-                                }
-                              </style>
+                              body{
+                                font-size:13px;
+                              }
+                              
+                              div{
+                                width:800px;
+                                padding:10px;
+                                margin-left:auto;
+                                margin-right:auto;
+                                letter-spacing:0px;
+                                background-repeat:repeat;
+                                overflow:auto;
+                                position:relative;
+                              }
+                              b{
+                                font-size:14px;
+                              }
+                              table{
+                                alignment-adjust:central;
+                                margin-left:auto;
+                                margin-right:auto;
+                              }
+                              td.l{
+                                margin-right:70px;
+                                padding-right:70px;
+                              }
+                              td.r{
+                                margin-left:70px;
+                                padding-left:70px;
+                              }
+                              td.l, td.r{
+                                line-height:0px;
+                                font-size:13px;
+                              }
+                              td table tr td{
+                                line-height:14px;
+                                font-size:12px;
+                              }
+                              td table{
+                                margin-top:12px;
+                                margin-bottom:13px;
+                              }
+                              table table{
+                                padding:4px;
+                                /*margin-bottom:5px;*/
+                                margin-top:3px;
+                                background-size:100% 100%;
+                              }
+                              .right{
+                                float:right;
+                              }
+                              .left{
+                                float:left;
+                              }
+                              .padleft{
+                                padding-left:50px;
+                                margin-left:50px;
+                              }
+                              del{
+                                text-decoration:none;
+                                position:relative;
+                              }
+                              img{
+                                height:15px;
+                                width:35px;
+                                padding-right:40px;
+                              }
+                            </style>
                             <div>
                             <table class="onerc" >
                             `
@@ -267,11 +222,11 @@ export  class PrintScreen extends Component {
 //function to extract pin from obj extractedPin and parse into html format
 extractPin = (value) =>{
     if (count % 2 == 1){
-       var html= `<td >
-                    <table class="l" >
+       var html= `<td class="l">
+                    <table  >
                       <tr>
                         <td ><span></span></td>
-                        <td ><b><del >N</del>${value.value}</b></span><span class="padleft" ><img src="file:images/airtel.jpg" /></span></td>
+                        <td ><b><del >N</del>${value.value}</b></span><span class="padleft" ></span></td>
                       </tr>
                       <tr>
                         <td >Ref:</td>
@@ -299,7 +254,7 @@ extractPin = (value) =>{
                           <table >
                             <tr>
                               <td ><span></span></td>
-                              <td ><b ><del>N</del>${value.value}</b></span><span class="padleft"><img src="file:images/airtel.jpg" /></span></td>
+                              <td ><b ><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                             </tr>
                             <tr>
                               <td >Ref:</td>
@@ -327,7 +282,7 @@ extractPin = (value) =>{
               <table>
                 <tr>
                   <td><span></span></td>
-                  <td><span class="right" ><b><del>N</del>${value.value}</b></span><span class="padleft" ><img src="file:images/airtel.jpg" /></span></td>
+                  <td><span class="right" ><b><del>N</del>${value.value}</b></span><span class="padleft" ></span></td>
                 </tr>
                 <tr>
                   <td>Ref:</td>
@@ -362,7 +317,7 @@ extractPin20PerPage = (value) => {
                     <table>
                       <tr>
                         <td><span></span></td>
-                        <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"><img src="file:///images/airtel.jpg" /></span></td>
+                        <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                       </tr>
                       <tr>
                         <td>Ref. No:</td>
@@ -390,7 +345,7 @@ extractPin20PerPage = (value) => {
                     <table>
                       <tr>
                         <td><span></span></td>
-                        <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"><img src="file:///images/airtel.jpg" /></span></td>
+                        <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                       </tr>
                       <tr>
                         <td>Ref. No:</td>
@@ -429,7 +384,7 @@ async createPDF() {
       let file = await RNHTMLtoPDF.convert(options20perPage)
       if(file.filePath){
         this.setState({ showProgress: false })
-        alert("Finished. Document at " + file.filePath);
+        alert("Finished. \nDocument at:   " + file.filePath);
        }
     }
     else{
@@ -442,7 +397,7 @@ async createPDF() {
       let file = await RNHTMLtoPDF.convert(options40perPage)
       if(file.filePath){
         this.setState({ showProgress: false })
-        alert("Finished. Document at " + file.filePath);
+        alert("Finished. \nDocument at:   " + file.filePath);
       }
     }
 }
@@ -464,9 +419,64 @@ async createPDF() {
                 var value =  object.body.substr(39, 4)
                 if(pageNum === 20){
                   extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
+                  extractedPin20Page.push({pin: pin, value: value})
                 }
                 else{
                   extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+                  extractedPin.push({pin: pin, value: value})
+
                 }
               }
 

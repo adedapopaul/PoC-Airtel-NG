@@ -16,9 +16,22 @@ import { DrawerActions } from 'react-navigation';
 import {NavigationActions} from 'react-navigation';
 
 import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
-
+import {requestCallPermission} from '../permissions'
 
 export default class ContactScreen extends React.Component {
+
+  conponentDidMount(){
+    this.props.requestCallPermission()
+      .then(function (didGetPermission: boolean) {
+            if (didGetPermission) {
+              console.log('Permission granted')
+            }
+            else{
+              alert('App might not work properly.')
+            }
+        })
+  }
+
   render() {
     return (
       <ScrollView>
