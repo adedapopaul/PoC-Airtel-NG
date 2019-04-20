@@ -26,8 +26,8 @@ var htmlTableTag = `<style type="text/css">
                       }
                       
                       div{
-                        width:800px;
-                        padding:10px;
+                        width:745px;
+                        padding:5px;
                         margin-left:auto;
                         margin-right:auto;
                         font-size:11px;
@@ -49,14 +49,14 @@ var htmlTableTag = `<style type="text/css">
                         margin-right:auto;
                       }
                       td.l{
-                        margin-right:10px;
-                        padding-right:10px;
-                        font-size:9px;
+                        margin-right:12px;
+                        padding-right:12px;
+                        
                       }
                       td.r{
-                        margin-left:10px;
-                        padding-left:10px;
-                        font-size:9px;
+                        margin-left:12px;
+                        padding-left:12px;
+                      
                       }
                       .pb{
                         page-break-after:always;
@@ -90,11 +90,11 @@ var htmlTableTag = `<style type="text/css">
                       td table tr td{
                         line-height:14px;
                         float:left;
-                        font-size:11px;
+                        font-size:10px;
                       }
                       td table{
-                        margin-top:6px;
-                        margin-bottom:7px;
+                        margin-top:2px;
+                        margin-bottom:1px;
                       }
                       table table{
                         /*background-image:url(RCGM500.jpg);
@@ -109,7 +109,7 @@ var htmlTableTag = `<style type="text/css">
 
 var htmlTableTag20perPage = `<style type="text/css">
                               body{
-                                font-size:13px;
+                                font-size:14px;
                               }
                               
                               div{
@@ -123,7 +123,7 @@ var htmlTableTag20perPage = `<style type="text/css">
                                 position:relative;
                               }
                               b{
-                                font-size:14px;
+                                font-size:19px;
                               }
                               table{
                                 alignment-adjust:central;
@@ -140,11 +140,11 @@ var htmlTableTag20perPage = `<style type="text/css">
                               }
                               td.l, td.r{
                                 line-height:0px;
-                                font-size:13px;
+                                font-size:8px;
                               }
                               td table tr td{
                                 line-height:14px;
-                                font-size:12px;
+                                font-size:15px;
                               }
                               td table{
                                 margin-top:12px;
@@ -205,6 +205,7 @@ export  class PrintScreen extends Component {
   }
 
   componentDidMount(){
+    this.getPhoneDetails()
     if(this.props.account){
       this.setState({
         msidn: this.props.variable.phone,
@@ -218,6 +219,10 @@ export  class PrintScreen extends Component {
   }
 
 
+getPhoneDetails = ()=> {
+  const phoneNumberDetails = RNSimData.getSimInfo().simSerialNumber0
+    this.setState({phoneNumberDetails : phoneNumberDetails})
+}
 
 //function to extract pin from obj extractedPin and parse into html format
 extractPin = (value) =>{
@@ -419,64 +424,9 @@ async createPDF() {
                 var value =  object.body.substr(39, 4)
                 if(pageNum === 20){
                   extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
-                  extractedPin20Page.push({pin: pin, value: value})
                 }
                 else{
                   extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-                  extractedPin.push({pin: pin, value: value})
-
                 }
               }
 
@@ -506,7 +456,19 @@ async createPDF() {
 
 validateForm = () =>{
   if(this.state.fileName ){
-      this.setState({ disable: false})
+      if( this.state.phoneNumberDetails === this.props.persistedPhoneNumber){
+        this.setState({ disable: false})
+      }else{
+        this.setState({ 
+            disable: true,
+          })
+          Toast.show({
+            text: "Please use the registered SIM Card with Device",
+            buttonText: 'Okay',
+            duration: 2000,
+            type: 'warning'
+          })
+      }
   }else{
     this.setState({ disable: true})
   }
@@ -595,7 +557,8 @@ const mapStateToProps = state => ({
   variable: state.vending.vending,
   cpToken: state.cpLicence.token,
   subCpToken: state.subCpLicence.token,
-  retailerToken: state.retailerLicence.token
+  retailerToken: state.retailerLicence.token,
+  persistedPhoneNumber: state.licence.phoneNumber,
 })
 
 export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence})(PrintScreen)

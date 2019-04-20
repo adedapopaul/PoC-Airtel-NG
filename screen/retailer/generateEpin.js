@@ -7,7 +7,6 @@ import KeepAwake from 'react-native-keep-awake';
 import RNSimData from 'react-native-sim-data'
 import {accountAction} from '../../redux/accountAction'
 import {vending} from '../../redux/vendaction'
-
 import {requestSmsPermission} from '../../permissions'
 import {licence,cpLicence, subCpLicence, retailerLicence} from '../../redux/action'
 import {connect} from 'react-redux'
@@ -31,6 +30,7 @@ export  class GenerateEpinScreen extends Component {
   }
 
   componentDidMount(){
+    this.getPhoneDetails()
     if(this.props.account && this.props.variable ){
       this.setState({
         msidn: this.props.variable.phone,
@@ -41,6 +41,10 @@ export  class GenerateEpinScreen extends Component {
     }
   }
 
+getPhoneDetails = ()=> {
+  const phoneNumberDetails = RNSimData.getSimInfo().simSerialNumber0
+    this.setState({phoneNumberDetails : phoneNumberDetails})
+}
 
   sendSMSNow = (sent, num, count)=>{
     if(sent === false ){
@@ -93,7 +97,7 @@ export  class GenerateEpinScreen extends Component {
               }
               else if(!transactionIdRegex.test(message.body)  || !verificationCodeRegex.test(message.body)){
                 setTimeout(()=>{
-                      alert("Timeout Error:  " +'\nResponse is taking too long.' +'\nPlease Restart Process.' )
+                      alert("Timeout Error:  " +'\nResponse is taking too long.'+`\n${count} sucessfully generated.` +'\nPlease Restart Process.' )
                       this.sendSMSNow(true, num, count)
                       KeepAwake.deactivate();
                     }, 5*60*1000)
@@ -110,7 +114,7 @@ export  class GenerateEpinScreen extends Component {
                     this.sendSMSNow(false, num, count) 
                   }
                   else{
-                    alert("Network Error:  " +'\nPlease Restart Process.' )
+                    alert("Network Error:  "+`\n${count} sucessfully generated.` +'\nPlease Restart Process.' )
                     this.sendSMSNow(true, num, count)
                     KeepAwake.deactivate();
                   }
@@ -128,33 +132,25 @@ export  class GenerateEpinScreen extends Component {
     const num= +this.state.quantity
     var count = 1
 
-    this.props.requestSmsPermission()
-      .then(function (didGetPermission: boolean) {
-            if (didGetPermission) {
-                if(this.state.selected2 === '1'){
-                  this.sendSMSNow(sent, num, count)
-                  Toast.show({
-                    text: 'Processing. Please wait...',
-                    duration: 1000,
-                  })
-                }
-                else if( this.state.selected2 === '2'){
-                  Toast.show({
-                    text: 'Feature is currently not enabled',
-                    duration: 3000,
-                  })
-                }
-                else {
-                  Toast.show({
-                    text: 'Please select appropriate option.',
-                    duration: 3000,
-                  })
-                }
-            } else {
-                alert("The app can not perform without the permission.")
-            }
+      if(this.state.selected2 === '1'){
+        this.sendSMSNow(sent, num, count)
+        Toast.show({
+          text: 'Processing. Please wait...',
+          duration: 1000,
         })
-
+      }
+      else if( this.state.selected2 === '2'){
+        Toast.show({
+          text: 'Feature is currently not enabled',
+          duration: 3000,
+        })
+      }
+      else {
+        Toast.show({
+          text: 'Please select appropriate option.',
+          duration: 3000,
+        })
+      }
     
   }
 
@@ -170,7 +166,19 @@ validateForm = () =>{
 
       this.setState({ disable: true})
     }else{
-      this.setState({ disable: false})
+      if( this.state.phoneNumberDetails === this.props.persistedPhoneNumber){
+        this.setState({ disable: false})
+      }else{
+        this.setState({ 
+            disable: true,
+          })
+          Toast.show({
+            text: "Please use the registered SIM Card with Device",
+            buttonText: 'Okay',
+            duration: 2000,
+            type: 'warning'
+          })
+      }
     } 
   }else{
     this.setState({ disable: true})
@@ -278,7 +286,8 @@ const mapStateToProps = state => ({
   variable: state.vending.vending,
   cpToken: state.cpLicence.token,
   subCpToken: state.subCpLicence.token,
-  retailerToken: state.retailerLicence.token
+  retailerToken: state.retailerLicence.token,
+  persistedPhoneNumber: state.licence.phoneNumber,
 })
 
 export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence})(GenerateEpinScreen)

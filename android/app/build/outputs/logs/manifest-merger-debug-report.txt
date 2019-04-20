@@ -33,11 +33,12 @@ MERGED from [:unimodules-core] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAi
 MERGED from [:unimodules-image-loader-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-image-loader-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:unimodules-sensors-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-sensors-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:2:1-13:12
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:16:1-24:12
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:16:1-24:12
-MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:16:1-21:12
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\6f110d14361541afb5b539e0b047ac70\AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:16:1-23:12
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\1da641a7fbbd5f56e3146c9ffc60d237\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1f456c7c6a99cf9732b8dd9ae005292f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\942031aeb68f341e5d1f5f156972eec1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f7f087687011e61e93a52c91e14113c2\AndroidManifest.xml:17:1-22:12
@@ -77,10 +78,10 @@ INJECTED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:4:5-67
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
@@ -203,16 +204,18 @@ MERGED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-
 MERGED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-device-info\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-20:19
 MERGED from [com.facebook.react:react-native:0.58.6] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\react-native-0.58.6.aar\7f9453e71bbd708a4823384a2eb9d8fa\AndroidManifest.xml:13:5-20
 MERGED from [com.facebook.react:react-native:0.58.6] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\react-native-0.58.6.aar\7f9453e71bbd708a4823384a2eb9d8fa\AndroidManifest.xml:13:5-20
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\6f110d14361541afb5b539e0b047ac70\AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\6f110d14361541afb5b539e0b047ac70\AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:19:5-21:19
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\1da641a7fbbd5f56e3146c9ffc60d237\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\1da641a7fbbd5f56e3146c9ffc60d237\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:22:5-26:19
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\3a250aa948aef568094984cefb9cb8c9\AndroidManifest.xml:11:5-20
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\1b88a5738d0e15faf6e617f3c6965b91\AndroidManifest.xml:2:3-17
@@ -315,16 +318,18 @@ MERGED from [:unimodules-sensors-interface] C:\Users\Olamilekan\Desktop\dapo\air
 MERGED from [:unimodules-sensors-interface] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\unimodules-sensors-interface\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.tom_roush:pdfbox-android:1.8.10.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\pdfbox-android-1.8.10.0.aar\00c6b56a8b1be42716b15631dda20f6e\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\6f110d14361541afb5b539e0b047ac70\AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\6f110d14361541afb5b539e0b047ac70\AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\1da641a7fbbd5f56e3146c9ffc60d237\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-stats-16.0.1.aar\1da641a7fbbd5f56e3146c9ffc60d237\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\879f08217723478e76d34e979caeb31c\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1f456c7c6a99cf9732b8dd9ae005292f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1f456c7c6a99cf9732b8dd9ae005292f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\942031aeb68f341e5d1f5f156972eec1\AndroidManifest.xml:20:5-44
@@ -414,22 +419,22 @@ ADDED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-p
 	android:name
 		ADDED from [:react-native-device-info] C:\Users\Olamilekan\Desktop\dapo\airtel-poc\pocAirtel\node_modules\react-native-device-info\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:17:25-76
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:20:5-81
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:20:5-81
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\3eac0417a2222701b74f199d7beae4be\AndroidManifest.xml:20:5-81
+ADDED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:23:5-82
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:23:5-82
+MERGED from [com.google.android.gms:play-services-iid:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-iid-16.0.1.aar\12b5ec481586937d607a89edd767e0cd\AndroidManifest.xml:23:5-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\e61a95e8261f9d12842d79e6e889817e\AndroidManifest.xml:20:22-79
+		ADDED from [com.google.android.gms:play-services-gcm:16.1.0] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-16.1.0.aar\80ea941b382823c3d8d3dbe0339fbe0a\AndroidManifest.xml:23:22-79
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\3eb1dd62370797a9cb901b24a4616c41\AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\f05fc52127f45b30693894118646645c\AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\e718dd9f8e22c8869e14762c5985bfda\AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Olamilekan\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\b11e1932131967ffa2bb7435db30034c\AndroidManifest.xml:24:13-58

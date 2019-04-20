@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Toast, Left } from 'native-base';
 import {SectionList, TouchableOpacity, StyleSheet,View, PermissionsAndroid, Platform} from 'react-native'
-// import {requestStoragePermission} from '../permissions'
+import {requestStoragePermission, requestStoragePermission2, requestContactPermission, requestContactPermission2, requestSmsPermission, requestSmsPermission2, requestCallPermission} from '../permissions'
 import {connect} from 'react-redux'
 import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 
@@ -11,54 +11,12 @@ export  class HomeScreen extends Component {
    //Checking for the permission just after component loaded
     
     if (Platform.OS === 'android') {
-        //Calling the permission function
-       this.requestStoragePermission();
-       this.requestStoragePermission2();
+       requestSmsPermission()
     }else{
         alert('IOS device found');
     }
  }
 
-
-requestStoragePermission= async function () {
-      try {
-        const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,{
-            'title': 'ERC-Airtel Permission',
-            'message': 'ERC-Airtel require permission to read your storage media'
-          }
-        )
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-          //To Check, If Permission is granted
-          console.log("You can use the storage");
-        } else {
-          alert("App might not perform well because permission is denied.");
-        }
-      } catch (err) {
-        // alert("err",err);
-        console.warn(err)
-      }
-  }
-
-  requestStoragePermission2= async function () {
-      try {
-        const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,{
-            'title': 'ERC-Airtel Permission',
-            'message': 'ERC-Airtel require permission to read your storage media'
-          }
-        )
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-          //To Check, If Permission is granted
-          console.log("You can use the storage");
-        } else {
-          alert("App might not perform well because permission is denied.");
-        }
-      } catch (err) {
-        // alert("err",err);
-        console.warn(err)
-      }
-  }
 
   render() {
     return (
