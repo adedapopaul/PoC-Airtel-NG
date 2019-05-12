@@ -10,9 +10,11 @@ import {vending} from '../../redux/vendaction'
 import {requestSmsPermission} from '../../permissions'
 import {licence,cpLicence, subCpLicence, retailerLicence} from '../../redux/action'
 import {connect} from 'react-redux'
-
+import {history} from '../../redux/history'
 import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
 
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 
 export  class GenerateEpinScreen extends Component {
 
@@ -61,10 +63,17 @@ getPhoneDetails = ()=> {
             buttonText: 'Okay',
             duration: 2000,
           })
-        // count++
-        this.listenSMSNow(true, num, count)
+        if(this.props.variable.receiverSim == 1){
+            this.listenSMSNow(true, num, counter)
+        }
+        else if(this.props.variable.receiverSim == 2){
+            this.listenSMSEpinToOtherNumber(true, num, counter)
+        }
+
         KeepAwake.activate();
       }else{
+        var msg = `Generated ${counter} E-Pin.\n    Date/Time: ${date}.`
+        this.props.history(msg)
         alert("Finished")
         KeepAwake.deactivate();
       }
@@ -99,6 +108,8 @@ getPhoneDetails = ()=> {
                 setTimeout(()=>{
                       alert("Timeout Error:  " +'\nResponse is taking too long.'+`\n${count} sucessfully generated.` +'\nPlease Restart Process.' )
                       this.sendSMSNow(true, num, count)
+                      var msg = `Generated ${counter} E-Pin.\n    Date/Time: ${date}.`
+                      this.props.history(msg)
                       KeepAwake.deactivate();
                     }, 5*60*1000)
                 
@@ -116,6 +127,60 @@ getPhoneDetails = ()=> {
                   else{
                     alert("Network Error:  "+`\n${count} sucessfully generated.` +'\nPlease Restart Process.' )
                     this.sendSMSNow(true, num, count)
+                    var msg = `Generated ${counter} E-Pin.\n    Date/Time: ${date}.`
+                    this.props.history(msg)
+                    KeepAwake.deactivate();
+                  }
+                })
+              }
+              
+          }) 
+    }
+        
+  }
+
+  listenSMSEpinToOtherNumber= ( sent, num, count) =>{
+    if(sent === true){
+      this.sendSMSNow( true, num, count)
+
+          let subscription = SmsListener.addListener(message => {
+            let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
+            let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
+
+              if (transactionIdRegex.test(message.body)) {
+                  Toast.show({
+                    text: `${count} Transaction Id received`,
+                    duration: 2000
+                  })
+                  subscription.remove();
+                  count++
+                  this.sendSMSNow(false, num, count) 
+              }
+              else if(!transactionIdRegex.test(message.body) ){
+                setTimeout(()=>{
+                      alert("Timeout Error:  " +'\nResponse is taking too long.'+`\n${count} sucessfully generated.` +'\nPlease Restart Process.' )
+                      this.sendSMSNow(true, num, count)
+                      var msg = `Generated ${counter} E-Pin.\n    Date/Time: ${date}.`
+                      this.props.history(msg)
+                      KeepAwake.deactivate();
+                    }, 5*60*1000)
+                
+                SmsListener.addListener(message => {
+
+                  if (verificationCodeRegex.test(message.body)) {
+                    Toast.show({
+                      text: `${count} E-Pin is received`,
+                      duration: 2000
+                    })
+                    subscription.remove();
+                    count++
+                    this.sendSMSNow(false, num, count) 
+                  }
+                  else{
+                    alert("Network Error:  "+`\n${count} sucessfully generated.` +'\nPlease Restart Process.' )
+                    this.sendSMSNow(true, num, count)
+                    var msg = `Generated ${counter} E-Pin.\n    Date/Time: ${date}.`
+                    this.props.history(msg)
                     KeepAwake.deactivate();
                   }
                 })
@@ -156,7 +221,10 @@ getPhoneDetails = ()=> {
 
 
 validateForm = () =>{
-  if(+this.state.selected2  &&  this.props.token && (this.props.cpToken || this.props.subCpToken  || this.props.retailerToken)){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(+this.state.selected2  &&  this.props.token && (this.props.cpToken || this.props.subCpToken  || this.props.retailerToken)){
     if(!this.props.account.pin){
       Toast.show({
         text: "Please ensure you save your pin in Manage Account Session",
@@ -251,6 +319,9 @@ onValueChange2(value: string) {
             Incorrect Values ?  Edit
             </Text>
 
+            <Text style={{paddingTop: 30, color : 'red'}}>Please Note.</Text>
+            <Text>If you intend to print with this software, kindly delete previous Airtel ERC messages from your phone before generating new ones. </Text>
+
             <Dialog
                 visible={this.state.dialogVisible}
                 title="Message"
@@ -288,6 +359,7 @@ const mapStateToProps = state => ({
   subCpToken: state.subCpLicence.token,
   retailerToken: state.retailerLicence.token,
   persistedPhoneNumber: state.licence.phoneNumber,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence})(GenerateEpinScreen)
+export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence, history})(GenerateEpinScreen)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {createStackNavigator, createDrawerNavigator, createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
-import { DrawerActions } from 'react-navigation';
+import { DrawerActions, createSwitchNavigator } from 'react-navigation';
 import {View,Text,StyleSheet,Platform,TouchableOpacity,Image,StatusBar} from 'react-native';
 
 import Home from '../screen/home';
@@ -40,8 +40,8 @@ import RetailerRechargeCustomer from '../screen/retailer/rechargeCustomer';
 
 import ChangePin from '../screen/changepin';
 import manageAccount from '../screen/manageAccount';
-
-
+import SplashScreen from '../screen/SplashScreen';
+import History from '../screen/history';
 import VendingVariable from '../screen/vending';
 
 const Tabs = createMaterialTopTabNavigator({
@@ -624,9 +624,30 @@ const StackNavigator = createStackNavigator({
 
     })
     },
+
+    History: {
+      screen: History,
+      navigationOptions: ({ navigation }) => ({
+        title: 'History',  
+        headerStyle: {
+            backgroundColor: '#483D8B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+
+    })
+    },
    
 });
 
 
-const AppContainer = createAppContainer(StackNavigator);
+const InitialNavigator = createSwitchNavigator({
+  Splash: SplashScreen,
+  App: StackNavigator
+});
+
+
+const AppContainer = createAppContainer(InitialNavigator);
 export default AppContainer;

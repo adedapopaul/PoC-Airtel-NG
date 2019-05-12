@@ -307,20 +307,6 @@ componentDidMount(){
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="md-stats" />
-              </Button>
-            </Left>
-            <Body>
-              <Text onPress={()=>this.props.navigation.navigate('')}>History</Text>
-            </Body>
-            <Right>
-              <Text>Stats</Text>
-              <Icon active name="arrow-forward" />
-            </Right>
-          </ListItem>
 
           <Dialog
             visible={this.state.dialogVisible}

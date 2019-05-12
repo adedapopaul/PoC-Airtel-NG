@@ -59,7 +59,10 @@ componentDidUpdate(prevProps) {
 
 
 validateForm = () =>{
-  if(this.state.phone && this.state.firstName && this.state.lastName && this.state.email && this.props.token){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.phone && this.state.firstName && this.state.lastName && this.state.email && this.props.token){
     this.setState({ 
       disable: false,
     })

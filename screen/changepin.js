@@ -8,6 +8,10 @@ import SmsListener from 'react-native-android-sms-listener'
 import {connect} from 'react-redux'
 import {requestSmsPermission} from '../permissions'
 import {licence} from '../redux/action'
+import {history} from '../redux/history'
+
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 
 export class ChangePinScreen extends Component {
 
@@ -42,6 +46,8 @@ export class ChangePinScreen extends Component {
                 text: 'Processing. Please wait...',
                 duration: 5000,
               })
+              var msg = `Changed Pin.\n      Date/Time: ${date}.`
+              this.props.history(msg)
 
               let subscription = SmsListener.addListener(message => {
                   alert(message.body)
@@ -155,6 +161,7 @@ _handleConfirm =old=>{
 
 const mapStateToProps = state => ({
   token: state.licence.token,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {licence})(ChangePinScreen)
+export default connect(mapStateToProps, {licence, history})(ChangePinScreen)

@@ -10,9 +10,10 @@ import {vending} from '../redux/vendaction'
 import {licence,cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {connect} from 'react-redux'
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
-
+import {history} from '../redux/history'
 import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
-
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 var extractedPin=[]
 var extractedPin20Page=[]
 var d= new Date()
@@ -156,6 +157,12 @@ var htmlTableTag20perPage = `<style type="text/css">
                                 margin-top:3px;
                                 background-size:100% 100%;
                               }
+                              .pb{
+                                page-break-after:always;
+                              }
+                              @page{
+                                size:A4;
+                              }
                               .right{
                                 float:right;
                               }
@@ -255,6 +262,35 @@ extractPin = (value) =>{
       }
       else{
           if(count % 4 === 0){
+            if(count% 40 === 0){
+              var html= `<td class="r" >
+                          <table >
+                            <tr>
+                              <td ><span></span></td>
+                              <td ><b ><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
+                            </tr>
+                            <tr>
+                              <td >Ref:</td>
+                              <td>${random()}</td>
+                            </tr>
+                            <tr>
+                              <td >S/N:</td>
+                              <td>${random()}</td>
+                            </tr>
+                            <tr>
+                              <td>Pin:</td>
+                              <td><b> ${value.pin.substr( 0, 4)}-${value.pin.substr( 4, 4)}-${value.pin.substr( 8, 4)}-${value.pin.substr( 12, 4)}</b></td>
+                            </tr>
+                            <tr>
+                              <td>Date:</td>
+                              <td>${date}</td>
+                            </tr>
+                          </table>
+                        </td> </tr><tr>
+                        <p class="pb"></p>`
+              htmlTableTag += html
+            }
+            else{
               var html= `<td class="r" >
                           <table >
                             <tr>
@@ -281,6 +317,7 @@ extractPin = (value) =>{
                         </td> </tr><tr>`
               htmlTableTag += html
             }
+          }
       else{
           var html = `
             <td class="r">
@@ -346,7 +383,8 @@ extractPin20PerPage = (value) => {
     htmlTableTag20perPage += html20
   }
   else{
-    var html20 =`<td class="r">
+    if(count % 20 === 0){
+      var html20 =`<td class="r">
                     <table>
                       <tr>
                         <td><span></span></td>
@@ -358,7 +396,7 @@ extractPin20PerPage = (value) => {
                       </tr>
                       <tr>
                         <td>Serial No:</td>
-                        <td>${random()}</td>
+                        <td>${value.serial}</td>
                       </tr>
                       <tr>
                         <td>Pin:</td>
@@ -371,8 +409,37 @@ extractPin20PerPage = (value) => {
                     </table>
                   </td>
               </tr>
-               `
-    htmlTableTag20perPage += html20
+              <p class="pb"></p>`
+          }
+          else{
+            var html20 =`<td class="r">
+                            <table>
+                              <tr>
+                                <td><span></span></td>
+                                <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
+                              </tr>
+                              <tr>
+                                <td>Ref. No:</td>
+                                <td>${random()}</td>
+                              </tr>
+                              <tr>
+                                <td>Serial No:</td>
+                                <td>${random()}</td>
+                              </tr>
+                              <tr>
+                                <td>Pin:</td>
+                                <td><b>${value.pin.substr( 0, 4)}-${value.pin.substr( 4, 4)}-${value.pin.substr( 8, 4)}-${value.pin.substr( 12, 4)}</b></td>
+                              </tr>
+                              <tr>
+                                <td>Date/Time:</td>
+                                <td>${date}</td>
+                              </tr>
+                            </table>
+                          </td>
+                      </tr>
+                       `
+            htmlTableTag20perPage += html20
+          }
   }
   count20++
 }
@@ -409,6 +476,8 @@ async createPDF() {
 
   _activate = async () => {
     if(+this.state.pageSize){
+      var msg = `Printed document ${this.state.fileName}.pdf.\n    Date/Time: ${date}.`
+      this.props.history(msg)
       var pageNum = +this.state.pageSize
       this.setState({ showProgress: true })
       SmsAndroid.list(JSON.stringify(filter), (fail) => {
@@ -455,7 +524,10 @@ async createPDF() {
 
 
 validateForm = () =>{
-  if(this.state.fileName ){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.fileName ){
       if( this.state.phoneNumberDetails === this.props.persistedPhoneNumber){
         this.setState({ disable: false})
       }else{
@@ -559,6 +631,7 @@ const mapStateToProps = state => ({
   subCpToken: state.subCpLicence.token,
   retailerToken: state.retailerLicence.token,
   persistedPhoneNumber: state.licence.phoneNumber,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence})(PrintScreen)
+export default connect(mapStateToProps, {accountAction, vending, licence,  cpLicence, subCpLicence, retailerLicence, history})(PrintScreen)

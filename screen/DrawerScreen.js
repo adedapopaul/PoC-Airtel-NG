@@ -17,6 +17,10 @@ import {connect} from 'react-redux'
 import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
 import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {accountAction} from '../redux/accountAction'
+import {history} from '../redux/history'
+
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 
 export class DrawerScreen extends Component {
 
@@ -145,7 +149,10 @@ export class DrawerScreen extends Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                  if(this.props.token){
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('VendingVariable')
+                }
+                 else if(this.props.token){
                     if(!this.props.retailerToken){
                       Toast.show({
                         text: "Please activate required licence for this feature.",
@@ -180,7 +187,14 @@ export class DrawerScreen extends Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                  if(this.props.token){
+                if(process.env.NODE_ENV === 'development'){
+                  var msg = `Checked Balance.\n      Date/Time: ${date}.`
+                    this.props.history(msg)
+                  this.checkBalance()
+                }
+                else  if(this.props.token){
+                  var msg = `Checked Balance.\n      Date/Time: ${date}.`
+                    this.props.history(msg)
                     this.checkBalance()
                   }
                   else{
@@ -254,6 +268,7 @@ const mapStateToProps = state => ({
   cpToken: state.cpLicence.token,
   subCpToken: state.subCpLicence.token,
   retailerToken: state.retailerLicence.token,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {licence,accountAction, cpLicence, subCpLicence, retailerLicence})(DrawerScreen)
+export default connect(mapStateToProps, {licence,accountAction, cpLicence, subCpLicence, retailerLicence, history})(DrawerScreen)

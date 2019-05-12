@@ -47,7 +47,10 @@ componentWillReceiveProps(nextProps) {
 
 
 validateForm = () =>{
-  if(this.state.username && this.state.serial && !this.props.retailerToken){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.username && this.state.serial && !this.props.retailerToken){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})

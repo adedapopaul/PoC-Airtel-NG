@@ -8,7 +8,9 @@ import {licence} from '../../redux/action'
 import {connect} from 'react-redux'
 
 import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
-
+import {history} from '../../redux/history'
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 
 export  class StockTransferScreen extends Component {
 
@@ -37,6 +39,10 @@ export  class StockTransferScreen extends Component {
       duration: 5000,
 
     })
+
+    var msg = `CP Stock Transfer to ${this.state.msidn}.\n    Date/Time: ${date}.`
+    this.props.history(msg)
+
     let subscription = SmsListener.addListener(message => {
             // let verificationCodeRegex = /Msg\:ERC PIN\(s\)\:(\d{16})/
             // let transactionIdRegex = /Msg\:Txn Id M\d+\.\d+\.\d+/
@@ -70,7 +76,10 @@ export  class StockTransferScreen extends Component {
 
 
 validateForm = () =>{
-  if(this.state.msidn && this.state.amount &&  this.props.token){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.msidn && this.state.amount &&  this.props.token){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -172,6 +181,7 @@ _handleAmount =phoneNumber=>{
 const mapStateToProps = state => ({
   token: state.licence.token,
   pin: state.cpAccount.cpAccount.pin,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {cpAccountAction,licence})(StockTransferScreen)
+export default connect(mapStateToProps, {cpAccountAction,licence, history})(StockTransferScreen)

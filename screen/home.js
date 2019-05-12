@@ -30,7 +30,10 @@ export  class HomeScreen extends Component {
             <CardItem>
                 <Icon active style={{ color: 'blue', fontSize: 30}} name="md-code-working" />
                 <TouchableOpacity  onPress={()=> {
-                  if(!this.props.token){ 
+                  if (process.env.NODE_ENV === 'development') {
+                    this.props.navigation.navigate('GenerateEPin')
+                  }
+                  else if(!this.props.token){ 
                     Toast.show({
                       text: 'Please activate your device',
                       duration: 3000,
@@ -55,7 +58,10 @@ export  class HomeScreen extends Component {
              <CardItem>
               <Icon active style={{ color: 'orange', fontSize: 30}} name="md-paper" />
               <TouchableOpacity  onPress={()=>{
-                if(!this.props.token){ 
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('Print')
+                }
+                else if(!this.props.token){ 
                   Toast.show({
                     text: 'Please activate your device',
                     duration: 3000,
@@ -77,8 +83,12 @@ export  class HomeScreen extends Component {
               </TouchableOpacity>
              </CardItem>
              <CardItem>
-              <Icon active style={{ color: 'red', fontSize: 30}}  name="md-analytics" />
-              <TouchableOpacity  onPress={()=>{ if(!this.props.cpToken){
+              <Icon active style={{ color: 'red', fontSize: 30}}  name="md-person" />
+              <TouchableOpacity  onPress={()=>{ 
+                if (process.env.NODE_ENV === 'development') {
+                  this.props.navigation.navigate('CPHome')
+                }
+                else if(!this.props.cpToken){
                   Toast.show({
                     text: 'You are not a registered user.',
                     duration: 3000,
@@ -92,7 +102,11 @@ export  class HomeScreen extends Component {
              </CardItem>
              <CardItem>
               <Icon active style={{ color: 'pink', fontSize: 30}}  name="md-person" />
-              <TouchableOpacity  onPress={()=> { if(!this.props.subCpToken){
+              <TouchableOpacity  onPress={()=> { 
+                if (process.env.NODE_ENV === 'development') {
+                  this.props.navigation.navigate('SubCPHome')
+                }
+                else if(!this.props.subCpToken){
                   Toast.show({
                     text: 'You are not a registered user.',
                     duration: 3000,
@@ -104,8 +118,12 @@ export  class HomeScreen extends Component {
               </TouchableOpacity>
              </CardItem>
              <CardItem>
-              <Icon active name="md-flame" />
-              <TouchableOpacity  onPress={()=>{ if(!this.props.retailerToken){
+              <Icon active name="md-person" />
+              <TouchableOpacity  onPress={()=>{ 
+                if (process.env.NODE_ENV === 'development') {
+                  this.props.navigation.navigate('RetailerHome')
+                }
+                else if(!this.props.retailerToken){
                   Toast.show({
                     text: 'You are not a registered user.',
                     duration: 3000,
@@ -115,6 +133,28 @@ export  class HomeScreen extends Component {
                 <Text>Retailer</Text>
               </TouchableOpacity>
              </CardItem>
+
+             <CardItem>
+              <Icon active style={{ color: "#007AFF", fontSize: 30}} name="md-stats" />
+              <TouchableOpacity  onPress={()=>{
+                if (process.env.NODE_ENV === 'development') {
+                  this.props.navigation.navigate('History')
+                }
+                else if(!this.props.token){ 
+                  Toast.show({
+                    text: 'Please activate your device',
+                    duration: 3000,
+                    type: 'warning'
+                  })
+                } 
+                else{ 
+                 this.props.navigation.navigate('History') 
+                }
+              }}>
+                <Text>History</Text>
+              </TouchableOpacity>
+             </CardItem>
+
            </Card>
         </Content>
       </Container>

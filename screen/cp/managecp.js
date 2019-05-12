@@ -5,7 +5,9 @@ import { ProgressDialog, Dialog } from 'react-native-simple-dialogs';
 import {cpAccountAction} from '../../redux/cp/manageCpAccount'
 import {licence} from '../../redux/action'
 import {connect} from 'react-redux'
-
+import {history} from '../../redux/history'
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 
 export class ManageCPAccountScreen extends Component {
 
@@ -32,11 +34,16 @@ export class ManageCPAccountScreen extends Component {
       text: "Account Information Successfully saved.",
       duration: 5000,
     })
+    var msg = `CP Account Info Updated.\n    Date/Time: ${date}.`
+    this.props.history(msg)
   }
 
 
 validateForm = () =>{
-  if(this.state.pin && this.props.token){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.pin && this.props.token){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -138,6 +145,7 @@ onValueChange2(value: string) {
 const mapStateToProps = state => ({
   token: state.licence.token,
   cpAccount: state.cpAccount.cpAccount,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {cpAccountAction,licence})(ManageCPAccountScreen)
+export default connect(mapStateToProps, {cpAccountAction,licence, history})(ManageCPAccountScreen)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button, Toast  } from 'native-base';
+import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button, Toast, ActionSheet  } from 'native-base';
 import {StatusBar} from 'react-native'
 
 import {NavigationActions} from 'react-navigation';
@@ -8,6 +8,15 @@ import {NavigationActions} from 'react-navigation';
 import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {connect} from 'react-redux'
 
+var BUTTONS = [
+  { text: "Device Licence", icon: "american-football", iconColor: "#2c8ef4" },
+  { text: "Channel Partner Licence", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Sub CP Licence", icon: "aperture", iconColor: "#ea943b" },
+  { text: "Retailer Licence", icon: "aperture", iconColor: "#ea943b" },
+  { text: "Cancel", icon: "close", iconColor: "#25de5b" }
+];
+var DESTRUCTIVE_INDEX = 3;
+var CANCEL_INDEX = 4;
 
 export  class  SettingsScreen extends React.Component {
 
@@ -68,7 +77,10 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                  if(this.props.token){
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('manageAccount')
+                }
+                 else if(this.props.token){
                     this.props.navigation.navigate('manageAccount')
                   }
                   else{
@@ -94,7 +106,10 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.token){
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('ChangePin')
+                }
+                else if(this.props.token){
                     this.props.navigation.navigate('ChangePin')
                   }
                   else{
@@ -115,12 +130,15 @@ export  class  SettingsScreen extends React.Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#00BFFF" }}>
-                <Icon active name="ios-analytics" />
+                <Icon active name="md-person" />
               </Button>
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.cpToken){
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('CPHome')
+                }
+                else if(this.props.cpToken){
                     this.props.navigation.navigate('CPHome')
                   }
                   else{
@@ -147,7 +165,10 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.subCpToken){
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('SubCPHome')
+                }
+                else if(this.props.subCpToken){
                     this.props.navigation.navigate('SubCPHome')
                   }
                   else{
@@ -174,7 +195,10 @@ export  class  SettingsScreen extends React.Component {
             </Left>
             <Body>
               <Text onPress={()=>{
-                if(this.props.retailerToken){
+                if(process.env.NODE_ENV === 'development'){
+                  this.props.navigation.navigate('RetailerHome')
+                }
+                else if(this.props.retailerToken){
                     this.props.navigation.navigate('RetailerHome')
                   }
                   else{
@@ -200,7 +224,32 @@ export  class  SettingsScreen extends React.Component {
               </Button>
             </Left>
             <Body>
-              <Text onPress={()=>this.props.navigation.navigate('LicenceHome')}>Licence</Text>
+              <Text 
+                onPress={() =>
+                    ActionSheet.show(
+                      {
+                        options: BUTTONS,
+                        cancelButtonIndex: CANCEL_INDEX,
+                        title: "Select Your Licence Option"
+                      },
+                      buttonIndex => {
+                        this.setState({ clicked: BUTTONS[buttonIndex] });
+                        if(BUTTONS[buttonIndex].text === "Device Licence"){
+                          this.props.navigation.navigate('Licence')
+                        }
+                        else if(BUTTONS[buttonIndex].text === "Channel Partner Licence"){
+                          this.props.navigation.navigate('CPLicence')
+                        }
+                        else if(BUTTONS[buttonIndex].text === "Sub CP Licence"){
+                          this.props.navigation.navigate('SubCPLicence')
+                        }
+                        else if(BUTTONS[buttonIndex].text === "Retailer Licence"){
+                          this.props.navigation.navigate('RetailerLicence')
+                        }
+                      },
+
+                    )}
+              >Licence</Text>
             </Body>
             <Right>
               <Text>Generic</Text>

@@ -137,6 +137,12 @@ const selectedContact = ( state={}, action) => {
   return state
 }
 
+//History reducer
+const historyReducer = (state = [], action) => {
+  if (action.type === 'HISTORY') return [...state, action.payload]
+  return state
+}
+
 const reducer = combineReducers({
   licence: licenceReducer,  //general licenece management reducer
   cpLicence: cpLicenceReducer,
@@ -148,6 +154,7 @@ const reducer = combineReducers({
   subCpAccount: manageSubCpAccountReducer,  //manage the account/ pin of the sub cp
   retailerAccount: manageRetailerAccountReducer,  // manage the account/pin of the retailer4
   cpContact: selectedContact,
+  history: historyReducer,
 
 })
 

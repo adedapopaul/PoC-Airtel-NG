@@ -5,7 +5,10 @@ import { View, Text, Button, StatusBar} from 'react-native'
 import {accountAction} from '../redux/accountAction'
 import {licence} from '../redux/action'
 import {connect} from 'react-redux'
+import {history} from '../redux/history'
 
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 
 export class ManageAccount extends Component {
 
@@ -41,6 +44,8 @@ componentDidMount(){
       text: "Account Information saved successfully.",
       duration: 3000
     })
+    var msg = `Account Info Editted.\n      Date/Time: ${date}.`
+    this.props.history(msg)
   }
 
 
@@ -187,6 +192,7 @@ _handlePin =old=>{
 const mapStateToProps = state => ({
   token: state.licence.token,
   account: state.account.account,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {accountAction,licence})(ManageAccount)
+export default connect(mapStateToProps, {accountAction,licence, history})(ManageAccount)

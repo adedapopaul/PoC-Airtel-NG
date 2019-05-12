@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Item, Input, Icon, Picker, Toast, Right } from 'native-base';
 import { View, Text, StatusBar, Button} from 'react-native'
-
+import RNImmediatePhoneCall from 'react-native-immediate-phone-call';
 import {vending} from '../redux/vendaction'
 import {licence, cpLicence, subCpLicence, retailerLicence} from '../redux/action'
 import {connect} from 'react-redux'
+import {history} from '../redux/history'
 
+
+var d= new Date()
+var date= `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`
 export  class VendingScreen extends Component {
 
   constructor(props) {
@@ -17,6 +21,7 @@ export  class VendingScreen extends Component {
       disable: true,
       errorText: '',
       selected2: undefined,
+      selectedSim: undefined,
     };
 
   }
@@ -40,7 +45,8 @@ export  class VendingScreen extends Component {
         msidn: this.props.variable.phone,
         pin: this.props.variable.pin,
         quantity: this.props.variable.quantity,
-        selected2: this.props.variable.amount
+        selected2: this.props.variable.amount,
+        selectedSim: this.props.variable.receiverSim,
       })
     }
   }
@@ -49,12 +55,14 @@ export  class VendingScreen extends Component {
   _activate = async () => {
     // alert(this.state.selected2)
     if(+this.state.selected2){
-      this.props.vending({amount : this.state.selected2, phone: this.state.msidn, quantity: this.state.quantity})
+      this.props.vending({amount : this.state.selected2, phone: this.state.msidn, quantity: this.state.quantity, receiverSim : this.state.selectedSim})
       Toast.show({
         text: "Vending variables is saved.",
         buttonText: "Okay",
         duration: 5000
       })
+      var msg = `Vending Varriable Editted.\n      Date/Time: ${date}.`
+      this.props.history(msg)
    }else{
       Toast.show({
         text: "Please select appropriate Denomination",
@@ -66,7 +74,10 @@ export  class VendingScreen extends Component {
 
 
 validateForm = () =>{
-  if(this.state.quantity && this.state.msidn && this.state.selected2 && this.props.token && (this.props.cpToken || this.props.subCpToken  || this.props.retailerToken)){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.quantity && this.state.msidn && this.state.selected2 && this.props.token && this.state.selectedSim && (this.props.cpToken || this.props.subCpToken  || this.props.retailerToken)){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})
@@ -113,6 +124,19 @@ _handleQuantity =quantity=>{
 }
 
 
+onValueChangeSim(value: string) {
+    if (value){
+      this.setState({
+        selectedSim: value,
+        errorText : ""
+      }, this.validateForm)
+    }else{
+    this.setState({
+        errorText : "Please select pin receiver option"
+      })
+    }
+
+  }
 
 onValueChange2(value: string) {
   if (value){
@@ -156,6 +180,24 @@ onValueChange2(value: string) {
               </Picker>
             </Item>
 
+
+            <Item picker>
+              <Picker
+                mode="dropdown"
+                iosIcon={<Icon name="arrow-down" />}
+                style={{ width: undefined }}
+                placeholder="Select MSISDN Receiver Option"
+                placeholderStyle={{ color: "#bfc6ea" }}
+                placeholderIconColor="#007aff"
+                selectedValue={this.state.selectedSim}
+                onValueChange={this.onValueChangeSim.bind(this)}
+              >
+                <Picker.Item label="Select MSISDN Receiver Option" value="key0" />
+                <Picker.Item label="Send PIN to Self" value="1" />
+                <Picker.Item label="Send PIN to other Number" value="2" />
+              </Picker>
+            </Item>
+
           <Item>
             <Icon active name='md-call' />
             <Input placeholder='MSISDN'
@@ -163,9 +205,6 @@ onValueChange2(value: string) {
               onChangeText={this._handlePhoneNumber}
               value={this.state.msidn}
             /> 
-            <Right>
-            <Icon active name="md-person-add" style={{ backgroundColor: "green", }} />
-            </Right>
           </Item>
 
           <Item>
@@ -189,6 +228,16 @@ onValueChange2(value: string) {
             />
             </View>
 
+            <Text style={{paddingTop: 30}}>If you don't know this SIM card number, no worries.
+              <Text style={{color : 'blue'}}
+              onPress={()=> RNImmediatePhoneCall.immediatePhoneCall('*121*3*4#')}
+              >
+               Get SIM Card Number.
+              </Text>
+            </Text>
+            <Text style={{paddingTop: 30, color : 'red'}}>Please Note.</Text>
+            <Text>If you select "Send PIN to other Number" as your Receiver Option, you will no longer be able to use this mobile app to print the E-Pin generated thereof.</Text>
+
         </Content>
       </Container>
     );
@@ -201,6 +250,7 @@ const mapStateToProps = state => ({
   cpToken: state.cpLicence.token,
   subCpToken: state.subCpLicence.token,
   retailerToken: state.retailerLicence.token,
+  sections: state.history,
 })
 
-export default connect(mapStateToProps, {vending,licence, cpLicence, subCpLicence, retailerLicence})(VendingScreen)
+export default connect(mapStateToProps, {vending,licence, cpLicence, subCpLicence, retailerLicence, history})(VendingScreen)
