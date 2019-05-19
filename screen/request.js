@@ -36,7 +36,7 @@ import {NavigationActions} from 'react-navigation';
 
 	request =  () => {
 		const hold = this.state
-  fetch('http://192.168.43.92:3000/v1/request/request', {
+  fetch('https://cardgenerationserver.herokuapp.com/v1/request/request', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

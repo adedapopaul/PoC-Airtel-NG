@@ -3,6 +3,7 @@ package com.ercairtelng;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rnfs.RNFSPackage;
 import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.burnweb.rnsendintent.RNSendIntentPackage;
@@ -56,6 +57,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFSPackage(),
             new RNHTMLtoPDFPackage(),
             new ReactNativeContacts(),
             new RNSendIntentPackage(),

@@ -61,7 +61,7 @@ export  class VendingScreen extends Component {
         buttonText: "Okay",
         duration: 5000
       })
-      var msg = `Vending Varriable Editted.\n      Date/Time: ${date}.`
+      var msg = `Vending Varriable Editted.\n     Date/Time: ${date}.`
       this.props.history(msg)
    }else{
       Toast.show({

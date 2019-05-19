@@ -37,6 +37,8 @@ target 'pocAirtel' do
 
   pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   target 'pocAirtelTests' do
     inherit! :search_paths
   end

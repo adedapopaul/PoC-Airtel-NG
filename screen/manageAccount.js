@@ -50,7 +50,10 @@ componentDidMount(){
 
 
 validateForm = () =>{
-  if(this.state.password && this.state.profile && this.state.username && this.state.pin && this.state.companyName && this.props.token){
+  if(process.env.NODE_ENV === 'development'){
+    this.setState({ disable: false})
+  }
+  else if(this.state.password && this.state.profile && this.state.username && this.state.pin && this.state.companyName && this.props.token){
     this.setState({ disable: false})
   }else{
     this.setState({ disable: true})

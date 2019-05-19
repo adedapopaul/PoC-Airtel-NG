@@ -41,6 +41,12 @@ export  class GenerateEpinScreen extends Component {
         pin: this.props.account.pin,
       })
     }
+    if(this.props.variable.receiverSim == 1){
+      this.setState({receiverSimOption : "Send PIN to Self"})
+    }
+    else if (this.props.variable.receiverSim == 2){
+      this.setState({receiverSimOption : "Send PIN to other Number"})
+    }
   }
 
 getPhoneDetails = ()=> {
@@ -72,7 +78,7 @@ getPhoneDetails = ()=> {
 
         KeepAwake.activate();
       }else{
-        var msg = `Generated ${counter} E-Pin.\n    Date/Time: ${date}.`
+        var msg = `Generated ${counter -1} E-Pin.\n    Date/Time: ${date}.`
         this.props.history(msg)
         alert("Finished")
         KeepAwake.deactivate();
@@ -301,6 +307,13 @@ onValueChange2(value: string) {
             <Text> Quantity :</Text>
             </Left>
             <Body><Text> {this.state.quantity} </Text></Body>
+          </ListItem>
+
+          <ListItem icon>
+            <Left>
+            <Text> Pin Receiver:</Text>
+            </Left>
+            <Body><Text> {this.state.receiverSimOption} </Text></Body>
           </ListItem>
 
           <View style={{ paddingTop : 20, color: 'blue' }}>

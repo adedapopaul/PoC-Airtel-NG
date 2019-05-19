@@ -39,6 +39,13 @@ export  class HomeScreen extends Component {
                       duration: 3000,
                       type: 'warning'
                     })
+                  }
+                  else if(!this.props.account.pin || !this.props.variable.phone){ 
+                    Toast.show({
+                      text: 'Please set Vending variable and Account infomation',
+                      duration: 3000,
+                      type: 'warning'
+                    })
                   } 
                   else{
                     if(!this.props.retailerToken){

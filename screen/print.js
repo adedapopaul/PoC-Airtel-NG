@@ -214,14 +214,15 @@ export  class PrintScreen extends Component {
   componentDidMount(){
     this.getPhoneDetails()
     if(this.props.account){
-      this.setState({
-        msidn: this.props.variable.phone,
-        amount: this.props.variable.amount,
-        quantity: this.props.variable.quantity,
+      this.setState({ 
         pin: this.props.account.pin,
-
       })
-      companyName=this.props.account.companyName
+      
+      var coyName=this.props.account.companyName
+      if(coyName.length > 11){
+        companyName = coyName.substr(0,13)
+      }
+      else{ companyName = coyName}
     }
   }
 
@@ -237,7 +238,7 @@ extractPin = (value) =>{
        var html= `<td class="l">
                     <table  >
                       <tr>
-                        <td ><span></span></td>
+                        <td ><span>${companyName}</span></td>
                         <td ><b><del >N</del>${value.value}</b></span><span class="padleft" ></span></td>
                       </tr>
                       <tr>
@@ -266,7 +267,7 @@ extractPin = (value) =>{
               var html= `<td class="r" >
                           <table >
                             <tr>
-                              <td ><span></span></td>
+                              <td ><span>${companyName}</span></td>
                               <td ><b ><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                             </tr>
                             <tr>
@@ -294,7 +295,7 @@ extractPin = (value) =>{
               var html= `<td class="r" >
                           <table >
                             <tr>
-                              <td ><span></span></td>
+                              <td ><span>${companyName}</span></td>
                               <td ><b ><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                             </tr>
                             <tr>
@@ -323,7 +324,7 @@ extractPin = (value) =>{
             <td class="r">
               <table>
                 <tr>
-                  <td><span></span></td>
+                  <td><span>${companyName}</span></td>
                   <td><span class="right" ><b><del>N</del>${value.value}</b></span><span class="padleft" ></span></td>
                 </tr>
                 <tr>
@@ -358,7 +359,7 @@ extractPin20PerPage = (value) => {
                   <td class="l">
                     <table>
                       <tr>
-                        <td><span></span></td>
+                        <td><span>${companyName}</span></td>
                         <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                       </tr>
                       <tr>
@@ -387,7 +388,7 @@ extractPin20PerPage = (value) => {
       var html20 =`<td class="r">
                     <table>
                       <tr>
-                        <td><span></span></td>
+                        <td><span>${companyName}</span></td>
                         <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                       </tr>
                       <tr>
@@ -415,7 +416,7 @@ extractPin20PerPage = (value) => {
             var html20 =`<td class="r">
                             <table>
                               <tr>
-                                <td><span></span></td>
+                                <td><span>${companyName}</span></td>
                                 <td><span class="right"><b><del>N</del>${value.value}</b></span><span class="padleft"></span></td>
                               </tr>
                               <tr>
